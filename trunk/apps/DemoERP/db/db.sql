@@ -5462,6 +5462,7 @@ select
         o.totalprice AS totalprice,
         o.tax_in_percent AS tax_in_percent,
         o.discount_in_percent AS discount_in_percent,
+        round(((o.totalprice * (100 - o.discount_in_percent) / 100) * o.tax_in_percent / 100), 2) AS tax,
         o.user_id AS user_id,
         o.offer_nr AS offer_nr,
         o.fixprice AS fixprice,
@@ -5527,6 +5528,7 @@ select
         c.city AS city,
         ofe.tax_in_percent AS tax_in_percent,
         ofe.discount_in_percent AS discount_in_percent,
+        round(((ofe.totalprice * (100 - ofe.discount_in_percent) / 100) * ofe.tax_in_percent / 100), 2) AS tax,
         ofe.totalprice AS totalprice,
         ofe.grosstotalprice AS grosstotalprice
     from

@@ -5,7 +5,7 @@
 <entry key="Title">Titel</entry>
 <entry key="User '*' is expired for application '*'">Der Benutzer '*0' ist nicht mehr gültig!</entry>
 <entry key="Error opening work-screen '*'">Die Maske '*' wurde nicht gefunden!</entry>
-<entry key="Fixprice">Fixpreis</entry>
+<entry key="Fix price">Fixpreis</entry>
 <entry key="  Checking login credentials ">  Anmeldeinformationen prüfen </entry>
 <entry key="Undo">Rückgängig</entry>
 <entry key="ORA-01400: *(&quot;*&quot;.*.&quot;*&quot;)*">Bitte befüllen Sie das Feld '*3' (*1.*2)!</entry>
@@ -23,19 +23,19 @@
 <entry key="ORA-01407: *(&quot;*&quot;.*.&quot;*&quot;)*">Bitte befüllen Sie das Feld '*3' (*1.*2)!</entry>
 <entry key="Tax">Steuer</entry>
 <entry key="ORA-2*: *ORA-*">*1</entry>
-<entry key="Validuntil">Gültig bis</entry>
+<entry key="Valid until">Gültig bis</entry>
 <entry key="MSSQL-515: *'*'*'*.*.*'*">Bitte befüllen Sie das Feld '*1' (*4.*5)!</entry>
 <entry key="Warning">Warnung</entry>
 <entry key="Upload">Upload</entry>
 <entry key="Orders &amp; Bills">Bestellung &amp; Rechnung</entry>
 <entry key="Offer Nr">Angebotsnummer</entry>
 <entry key="Password changed successful!">Passwort wurde geändert!</entry>
-<entry key="Upload Order Document">Bestellschein hochladen</entry>
+<entry key="Upload order document">Bestellschein hochladen</entry>
 <entry key="Customer Nr">Kundennummer</entry>
 <entry key="Please choose the file:">Bitte wählen Sie die gewünschte Datei:</entry>
 <entry key="Is paid">Ist bestellt</entry>
 <entry key="*&quot;*&quot;*&quot;*.*&quot;*SQLCODE=-803*">Eindeutigkeitsverletzung! Doppelter Schüssel kann nicht in die Tabelle *3.*4 eingetragen werden.</entry>
-<entry key="Show Order Document">Bestellschein anzeigen</entry>
+<entry key="Show order document">Bestellschein anzeigen</entry>
 <entry key="Move Down">Nach unten</entry>
 <entry key="First name">Vorname</entry>
 <entry key="Parameter 'username' is missing for application '*'">Konfigurationsfehler: Datenbank Anmeldedaten sind ungültig!</entry>
@@ -75,7 +75,7 @@
 <entry key="Tag &lt;*&gt; of template does not exist!">Der Tag &lt;*&gt; des Templates fehlt in den Daten!</entry>
 <entry key="Username">Benutzername</entry>
 <entry key="Search Order">Suche</entry>
-<entry key="Orderdocument">Bestellschein</entry>
+<entry key="Order document">Bestellschein</entry>
 <entry key="Can not open database connection with '*' for application '*'">Die Verbindung zur Datenbank kann nicht hergestellt werden!</entry>
 <entry key="Replace the file?">Soll die Datei ersetzt werden?</entry>
 <entry key="Logout">Abmelden</entry>
@@ -85,7 +85,7 @@
 <entry key="Cause(s) of failure">Fehlerursache(n)</entry>
 <entry key="Details">Details</entry>
 <entry key="Export Articles to Webshop">Artikel Exportieren</entry>
-<entry key="Orderdate">Bestelldatum</entry>
+<entry key="Order date">Bestelldatum</entry>
 <entry key="Unknown method '*'">Die Methode '*' wurde nicht gefunden!</entry>
 <entry key="An error occured during storing the data!*Would you nevertheless like to leave the window?">Beim Speichern der Daten ist ein Fehler aufgetreten!
 
@@ -111,10 +111,10 @@ Möchten Sie dennoch das Fenster verlassen?</entry>
 <entry key="Delete">Löschen</entry>
 <entry key="Close">Schließen</entry>
 <entry key="User '*' is inactive for application '*'">Der Benutzer '*0' wurde deaktiviert!</entry>
-<entry key="Totalprice">Nettopreis</entry>
+<entry key="Total price">Nettopreis</entry>
 <entry key="Order Grosstotalprice">Bruttopreis der Bestellungen</entry>
 <entry key="Confirmation">Bestätigung</entry>
-<entry key="Isordered">Ist bestellt</entry>
+<entry key="Is ordered">Ist bestellt</entry>
 <entry key="No session for call '*'">Die Sitzung wurde nicht gefunden!</entry>
 <entry key="* already exists.">* existiert bereits.</entry>
 <entry key="ORA-02292: *(*.*)*">Löschen nicht möglich, weil noch Datensätze in einer Detail Tabelle existieren (*2)!</entry>
@@ -140,7 +140,7 @@ Möchten Sie dennoch das Fenster verlassen?</entry>
 <entry key="New Offer">Angebot erstellen</entry>
 <entry key="Article">Artikel</entry>
 <entry key="Billing Information">Rechnungsinformation</entry>
-<entry key="Billingdate">Rechnungsdatum</entry>
+<entry key="Billing date">Rechnungsdatum</entry>
 <entry key="Value &quot;*&quot; does not match date format &quot;*&quot; locale [*]!">Der Wert "*" stimmt nicht mit dem Datumsformat "*" Region [*] überein!</entry>
 <entry key="Close all windows">Alle Fenster schließen</entry>
 <entry key="Invalid request parameters!">Die Server Anfrage enthält ungültige Parameter!</entry>
@@ -162,7 +162,7 @@ Möchten Sie dennoch das Fenster verlassen?</entry>
 <entry key="System">System</entry>
 <entry key="Database credentials were not found!">Die Datenbank Anmeldeinformationen wurden nicht gefunden!</entry>
 <entry key="Save as...">Speichern unter...</entry>
-<entry key="Offerdate">Angebotsdatum</entry>
+<entry key="Offer date">Angebotsdatum</entry>
 <entry key="Value of template sheet '*' cell (*) &quot;*&quot; does not match cell (*) &quot;*&quot;!">Der Wert des Template Blattes '*' in Zelle (*) "*" stimmt nicht mit Zelle (*) "*" überein!</entry>
 <entry key="Parameter 'password' is missing for application '*'">Konfigurationsfehler: Datenbank Anmeldedaten sind ungültig!</entry>
 <entry key="Invalid stream identifier '*'">Ungültige Server-Anfragekennung!</entry>
@@ -202,16 +202,16 @@ Möchten Sie dennoch das Fenster verlassen?</entry>
 <entry key="Create Bill">Rechnung erstellen</entry>
 <entry key="Add articles to offer">Artikel zum Angebot hinzufügen</entry>
 <entry key="Areas">Flächen</entry>
-<entry key="Grosstotalprice">Bruttopreis</entry>
+<entry key="Gross total price">Bruttopreis</entry>
 <entry key="Invalid serializer '*'">Die Serialisierung für die Server Anfragen wurde nicht gefunden!</entry>
 <entry key="Customer Detail">Kunden Detailansicht</entry>
 <entry key="E">B</entry>
 <entry key="You can't remove the administrator role of yourself!">Es ist nicht möglich, sich selbst die Administratoren Rolle zu entziehen!</entry>
 <entry key="ORA-01722: *">Es sind nur Zahlen erlaubt!</entry>
-<entry key="Deliverydate">Lieferdatum</entry>
+<entry key="Delivery date">Lieferdatum</entry>
 <entry key="MSSQL-547: *'*'*'*'*'*.*'*'*'*">Löschen nicht möglich, weil noch Detaildatensätze in der Tabelle *5.*6 existieren (*1)!</entry>
 <entry key="Lines">Linien</entry>
-<entry key="Numberof">Anzahl</entry>
+<entry key="Number of">Anzahl</entry>
 <entry key="Error during instantiation of security manager">Der Sicherheitsmanager kann nicht verwendet werden!</entry>
 <entry key="Please change your password">Bitte ändern Sie Ihr Passwort!</entry>
 <entry key="MySQL-1451: *(`*`.`*`*`*`*(`*`)*`*`*(`*`))">Löschen nicht möglich, weil noch Detaildatensätze in der Tabelle *1.*2 existieren (*4)!</entry>
@@ -253,4 +253,5 @@ Möchten Sie dennoch das Fenster verlassen?</entry>
 <entry key="Search">Suchen</entry>
 <entry key="Address">Adresse</entry>
 <entry key="Selected">Auswählen</entry>
+<entry key="Add to offer">Zum Angebot hinzufügen</entry>
 </properties>

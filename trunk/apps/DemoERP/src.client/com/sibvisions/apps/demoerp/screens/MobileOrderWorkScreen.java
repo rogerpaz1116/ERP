@@ -680,14 +680,23 @@ public class MobileOrderWorkScreen extends DataSourceWorkScreen
 	}
 
 	/**
-	 * @param pOrderId the customer id.
-	 * @throws Throwable
+	 * Selects an order by index.
+	 * 
+	 * @param pIndex the row index
+	 * @throws Throwable if selecting order fails
 	 */
 	public void setRowIndex(int pIndex) throws Throwable
 	{
 		rdbOrder_.setSelectedRow(pIndex);
 	}
 
+	/**
+	 * Inserts an order.
+	 * 
+	 * @param customerId the customer id
+	 * @param offerId the offer id
+	 * @throws Throwable if insert fails
+	 */
 	public void doInsertOrder(Object customerId, Object offerId) throws Throwable
 	{
 		rdbOrder_.setInsertEnabled(true);
