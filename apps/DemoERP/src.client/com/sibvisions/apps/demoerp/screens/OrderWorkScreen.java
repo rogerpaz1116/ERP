@@ -28,6 +28,7 @@ import javax.rad.genui.component.UIButton;
 import javax.rad.genui.component.UILabel;
 import javax.rad.genui.container.UIGroupPanel;
 import javax.rad.genui.container.UIPanel;
+import javax.rad.genui.container.UIScrollPanel;
 import javax.rad.genui.container.UISplitPanel;
 import javax.rad.genui.container.UITabsetPanel;
 import javax.rad.genui.control.UIEditor;
@@ -214,9 +215,9 @@ public class OrderWorkScreen extends DataSourceWorkScreen implements IExpandable
 	private UILabel			labelPercentage2				= new UILabel();
 
 	/**
-	 * labelDiscountInPercent1.
+	 * labelGrosstotalprice.
 	 */
-	private UILabel			labelDiscountInPercent1			= new UILabel();
+	private UILabel			labelGrosstotalprice			= new UILabel();
 
 	/**
 	 * labelCurrency1.
@@ -336,7 +337,7 @@ public class OrderWorkScreen extends DataSourceWorkScreen implements IExpandable
 	/**
 	 * panelOrder.
 	 */
-	private UIPanel			panelOrder						= new UIPanel();
+	private UIScrollPanel			panelOrder						= new UIScrollPanel();
 
 	/**
 	 * groupPanelArticles.
@@ -512,6 +513,8 @@ public class OrderWorkScreen extends DataSourceWorkScreen implements IExpandable
 		ProjXUtil.addAskDeleteDialog(rdbOrder_);
 
 		rdbOrder_.getRowDefinition().getColumnDefinition("ISPAID").setLabel("Is paid");
+		
+		rdbOfferarticle.getRowDefinition().getColumnDefinition("NUMBEROF").setLabel("Number of");
 	}
 
 	/**
@@ -573,24 +576,28 @@ public class OrderWorkScreen extends DataSourceWorkScreen implements IExpandable
 		groupPanelArticles.add(tableOfferarticle, formLayoutArticles.getConstraints(0, 0, -1, -1));
 
 		panelPrices.setLayout(formLayoutPrices);
-		panelPrices.add(labelDiscountInPercent, formLayoutPrices.getConstraints(-3, 2));
-		panelPrices.add(labelDiscountInPercent1, formLayoutPrices.getConstraints(-3, 3));
-		panelPrices.add(editOrder_DiscountInPercent, formLayoutPrices.getConstraints(-2, 2));
-		panelPrices.add(labelTaxInPercent, formLayoutPrices.getConstraints(-3, 1));
-		panelPrices.add(editOrder_TaxInPercent, formLayoutPrices.getConstraints(-2, 1));
+		
 		panelPrices.add(labelTotalprice, formLayoutPrices.getConstraints(-3, 0));
 		panelPrices.add(editOrder_Totalprice, formLayoutPrices.getConstraints(-2, 0));
 		panelPrices.add(labelCurrency2, formLayoutPrices.getConstraints(-1, 0));
-		panelPrices.add(labelPercentage2, formLayoutPrices.getConstraints(-1, 2));
-		panelPrices.add(labelPercentage1, formLayoutPrices.getConstraints(-1, 1));
+		
+		panelPrices.add(labelDiscountInPercent, formLayoutPrices.getConstraints(-3, 1));
+		panelPrices.add(editOrder_DiscountInPercent, formLayoutPrices.getConstraints(-2, 1));
+		panelPrices.add(labelPercentage2, formLayoutPrices.getConstraints(-1, 1));
+		
+		panelPrices.add(labelTaxInPercent, formLayoutPrices.getConstraints(-3, 2));
+		panelPrices.add(editOrder_TaxInPercent, formLayoutPrices.getConstraints(-2, 2));
+		panelPrices.add(labelPercentage1, formLayoutPrices.getConstraints(-1, 2));
+
+		panelPrices.add(labelGrosstotalprice, formLayoutPrices.getConstraints(-3, 3));
 		panelPrices.add(editOrder_Grosstotalprice, formLayoutPrices.getConstraints(-2, 3));
 		panelPrices.add(labelCurrency1, formLayoutPrices.getConstraints(-1, 3));
 
 		labelOrder_nr.setText("Order Nr");
 
-		labelOrderdate.setText("Orderdate");
+		labelOrderdate.setText("Order date");
 
-		labelDeliverydate.setText("Deliverydate");
+		labelDeliverydate.setText("Delivery date");
 
 		labelTermsofpayment1.setText("Customer Nr");
 
@@ -598,7 +605,7 @@ public class OrderWorkScreen extends DataSourceWorkScreen implements IExpandable
 
 		labelSearch.setText("Search Order");
 
-		labelOrderdocumentname.setText("Orderdocument");
+		labelOrderdocumentname.setText("Order document");
 
 		editOrder_OrderNr.setDataRow(rdbOrder_);
 		editOrder_OrderNr.setColumnName("ORDER_NR");
@@ -656,8 +663,8 @@ public class OrderWorkScreen extends DataSourceWorkScreen implements IExpandable
 		panelOrder.add(editOrder_Deliverydate, formLayoutOrder.getConstraints(1, 4));
 		panelOrder.add(editOrder_Orderdate, formLayoutOrder.getConstraints(1, 3));
 		panelOrder.add(editOrder_Orderdocumentname, formLayoutOrder.getConstraints(1, 5, -1, 5));
-		panelOrder.add(buttonDownload, formLayoutOrder.getConstraints(-2, 6));
-		panelOrder.add(buttonUpload, formLayoutOrder.getConstraints(-1, 6));
+		panelOrder.add(buttonDownload, formLayoutOrder.getConstraints(1, 6));
+		panelOrder.add(buttonUpload, formLayoutOrder.getConstraints(2, 6));
 		panelOrder.add(groupPanelArticles, formLayoutOrder.getConstraints(0, 7, -1, 7));
 		panelOrder.add(panelPrices, formLayoutOrder.getConstraints(0, 8, -1, 8));
 
@@ -691,11 +698,11 @@ public class OrderWorkScreen extends DataSourceWorkScreen implements IExpandable
 
 		filterEditor.setDataRow(rdbOrder_);
 
-		buttonUpload.setText("Upload Order Document");
+		buttonUpload.setText("Upload order document");
 		buttonUpload.eventAction().addListener(this, "doUploadOrderDocument");
 		buttonUpload.setImage(UIImage.getImage("/com/sibvisions/apps/demoerp/images/import_database2.png"));
 
-		buttonDownload.setText("Show Order Document");
+		buttonDownload.setText("Show order document");
 		buttonDownload.eventAction().addListener(this, "doDownloadOrderDocument");
 		buttonDownload.setImage(UIImage.getImage("/com/sibvisions/apps/demoerp/images/export_database2.png"));
 
@@ -705,11 +712,11 @@ public class OrderWorkScreen extends DataSourceWorkScreen implements IExpandable
 
 		formLayoutBillingInner.setAnchorConfiguration("r1=160");
 
-		formLayoutOrder.setAnchorConfiguration("r1=160,b7=205");
+		formLayoutOrder.setAnchorConfiguration("r1=180,b7=205");
 
 		labelBillingdate.setText("Billing Nr");
 
-		labelBillingdate1.setText("Billingdate");
+		labelBillingdate1.setText("Billing date");
 
 		labelBillingcompany.setText("Company");
 
@@ -725,19 +732,19 @@ public class OrderWorkScreen extends DataSourceWorkScreen implements IExpandable
 
 		labelCurrency2.setText("Euro");
 
-		labelTotalprice.setText("Totalprice");
+		labelTotalprice.setText("Total price");
 
 		labelPercentage1.setText("(%)");
 
-		labelTaxInPercent.setText("Tax In Percent");
+		labelTaxInPercent.setText("Tax");
 
 		labelPercentage2.setText("(%)");
 
-		labelDiscountInPercent.setText("Discount In Percent");
+		labelDiscountInPercent.setText("Discount");
 
 		labelCurrency1.setText("Euro");
 
-		labelDiscountInPercent1.setText("Grosstotalprice");
+		labelGrosstotalprice.setText("Gross total price");
 
 		editOrder_BillingNr.setDataRow(rdbOrder_);
 		editOrder_BillingNr.setColumnName("BILLING_NR");

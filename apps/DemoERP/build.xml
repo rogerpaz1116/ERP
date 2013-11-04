@@ -20,9 +20,9 @@
   
   <property name="company.url" value="http://visionx.sibvisions.com"/>
   
-  <property name="app.title" value="Demoerp"/>
+  <property name="app.title" value="DemoERP"/>
   
-  <property name="app.title_original" value="DemoERP"/>
+  <property name="app.title_original" value="Enterprise Resource Planning"/>
   
   <property name="app.name" value="DemoERP"/>
   
@@ -242,13 +242,38 @@
   
   <target name="jarall" depends="jar">
     <!-- all jars together -->
+    <buildnr buildfile="${buildnumber}/buildnr.properties" loadonly="true"/>
+
     <jar destfile="${install}/${jar.name.client.all}">
       <zipgroupfileset dir="${libs}" includes="*.jar"/>
       <zipgroupfileset dir="${libs}/client" includes="*.jar"/>
       <zipgroupfileset dir="${install}" includes="${jar.name.client}"/>
+      <manifest>
+        <attribute name="Implementation-Title" value="${build.versionstring}"/>
+        <attribute name="Implementation-Version" value="b${build.number} ${build.date}"/>
+        <attribute name="Implementation-Vendor" value="${company.name}"/>
+        <attribute name="Codebase" value="*"/>
+        <attribute name="Permissions" value="sandbox"/>
+        <attribute name="Application-Name" value="${app.title_original}"/>
+      </manifest>
     </jar>
+
+    <jar destfile="${install}/${jar.name.client.all.signed}">
+      <zipgroupfileset dir="${libs}" includes="*.jar"/>
+      <zipgroupfileset dir="${libs}/client" includes="*.jar"/>
+      <zipgroupfileset dir="${install}" includes="${jar.name.client}"/>
+      <manifest>
+        <attribute name="Implementation-Title" value="${build.versionstring}"/>
+        <attribute name="Implementation-Version" value="b${build.number} ${build.date}"/>
+        <attribute name="Implementation-Vendor" value="${company.name}"/>
+        <attribute name="Codebase" value="*"/>
+        <attribute name="Permissions" value="all-permissions"/>
+        <attribute name="Application-Name" value="${app.title_original}"/>
+      </manifest>
+    </jar>
+    
     <copy file="${install}/${jar.name.client}" tofile="${install}/${jar.name.client.signed}"/>
-    <copy file="${install}/${jar.name.client.all}" tofile="${install}/${jar.name.client.all.signed}"/>
+
     <if>
       <and>
         <isset property="sign.alias"/>

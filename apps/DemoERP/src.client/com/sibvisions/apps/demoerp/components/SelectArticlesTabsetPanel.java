@@ -211,7 +211,10 @@ public class SelectArticlesTabsetPanel extends UITabsetPanel implements INodeFor
 		rdbArticle.getRowDefinition().getColumnDefinition("ARTICLE").setReadOnly(true);
 		rdbArticle.getRowDefinition().getColumnDefinition("PRICE").setReadOnly(true);
 		
-		rdbArticle.getRowDefinition().getColumnView(ITableControl.class).setColumnNames(new String[] { "ARTICLE_NR", "ARTICLE", "PRICE", "SELECTED" });
+		rdbArticle.getRowDefinition().getColumnDefinition("SELECTED").setLabel("Add to offer");
+		rdbArticle.getRowDefinition().getColumnDefinition("SELECTED").setWidth(100);
+		
+		rdbArticle.getRowDefinition().getColumnView(ITableControl.class).setColumnNames(new String[] { "SELECTED", "ARTICLE_NR", "ARTICLE", "PRICE" });
 
 		rdbArticle.getRowDefinition().getColumnDefinition("DESCRIPTION").getDataType().setCellEditor(ProjXUtil.MULTILINE_EDITOR);
 		

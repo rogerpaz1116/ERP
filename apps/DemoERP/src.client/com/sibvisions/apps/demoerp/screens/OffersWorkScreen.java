@@ -168,7 +168,17 @@ public class OffersWorkScreen extends DataSourceWorkScreen
 
 		rdbOffer.getRowDefinition().getColumnDefinition("CUSTOMER_NR").setLabel("Customer");
 		
-		rdbOffer.getRowDefinition().getColumnDefinition("CREATIONDATE").setLabel("Offerdate");
+		rdbOffer.getRowDefinition().getColumnDefinition("CREATIONDATE").setLabel("Offer date");
+		
+		rdbOffer.getRowDefinition().getColumnDefinition("VALIDUNTIL").setLabel("Valid until");
+		
+		rdbOffer.getRowDefinition().getColumnDefinition("TOTALPRICE").setLabel("Total price");
+		
+		rdbOffer.getRowDefinition().getColumnDefinition("FIXPRICE").setLabel("Fix price");
+		
+		rdbOffer.getRowDefinition().getColumnDefinition("ISORDERED").setLabel("Is ordered");
+		
+		rdbOffer.getRowDefinition().getColumnDefinition("GROSSTOTALPRICE").setLabel("Gross totalprice");
 
 		rdbOffer.getRowDefinition().getColumnDefinition("TOTALPRICE").getDataType().setCellEditor(ProjXUtil.CURRENCY);
 

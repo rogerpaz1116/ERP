@@ -322,7 +322,7 @@ public class OfferWorkScreen extends DataSourceWorkScreen
 		rdbOffer.getRowDefinition().getColumnDefinition("ISORDERED").getDataType().setCellEditor(ProjXUtil.YESNO_EDITOR);
 		rdbOffer.getRowDefinition().getColumnDefinition("ISORDERED").setReadOnly(true);
 
-		rdbOffer.getRowDefinition().getColumnDefinition("CREATIONDATE").setLabel("OFFERDATE");
+		rdbOffer.getRowDefinition().getColumnDefinition("CREATIONDATE").setLabel("OFFER DATE");
 		rdbOffer.getRowDefinition().getColumnDefinition("CUSTOMER_NR").setReadOnly(true);
 	}
 
@@ -336,13 +336,13 @@ public class OfferWorkScreen extends DataSourceWorkScreen
 		tabsetPanelSelectArticles = new SelectArticlesTabsetPanel(getDataSource(), rdbOffer);
 		tabsetPanelSelectArticles.setPreferredSize(500, 320);
 
-		labelCreationdate.setText("Offerdate");
+		labelCreationdate.setText("Offer date");
 
 		labelTitle.setText("Title");
 
-		labelValiduntil.setText("Validuntil");
+		labelValiduntil.setText("Valid until");
 
-		labelTotalprice.setText("Totalprice");
+		labelTotalprice.setText("Total price");
 
 		labelTaxInPercent.setText("Tax");
 
@@ -350,9 +350,9 @@ public class OfferWorkScreen extends DataSourceWorkScreen
 
 		labelOfferNr.setText("Offer Nr");
 
-		labelFixprice.setText("Fixprice");
+		labelFixprice.setText("Fix price");
 
-		labelGrossTotalprice.setText("Gross Totalprice");
+		labelGrossTotalprice.setText("Gross total price");
 
 		labelPercent1.setText("(%)");
 
@@ -449,13 +449,13 @@ public class OfferWorkScreen extends DataSourceWorkScreen
 		panelPrices.add(editOfferTotalprice, formLayoutPrices.getConstraints(-2, 0));
 		panelPrices.add(labelCurrency1, formLayoutPrices.getConstraints(-1, 0));
 
-		panelPrices.add(labelTaxInPercent, formLayoutPrices.getConstraints(-3, 1));
-		panelPrices.add(editOfferTaxInPercent, formLayoutPrices.getConstraints(-2, 1));
-		panelPrices.add(labelPercent1, formLayoutPrices.getConstraints(-1, 1));
-
-		panelPrices.add(labelDiscountInPercent, formLayoutPrices.getConstraints(-3, 2));
-		panelPrices.add(editOfferDiscountInPercent, formLayoutPrices.getConstraints(-2, 2));
-		panelPrices.add(labelPercent2, formLayoutPrices.getConstraints(-1, 2));
+		panelPrices.add(labelDiscountInPercent, formLayoutPrices.getConstraints(-3, 1));
+		panelPrices.add(editOfferDiscountInPercent, formLayoutPrices.getConstraints(-2, 1));
+		panelPrices.add(labelPercent2, formLayoutPrices.getConstraints(-1, 1));
+		
+		panelPrices.add(labelTaxInPercent, formLayoutPrices.getConstraints(-3, 2));
+		panelPrices.add(editOfferTaxInPercent, formLayoutPrices.getConstraints(-2, 2));
+		panelPrices.add(labelPercent1, formLayoutPrices.getConstraints(-1, 2));
 
 		panelPrices.add(labelGrossTotalprice, formLayoutPrices.getConstraints(-3, 3));
 		panelPrices.add(editOfferGrosstotalprice, formLayoutPrices.getConstraints(-2, 3));
@@ -670,6 +670,7 @@ public class OfferWorkScreen extends DataSourceWorkScreen
 	 */
 	public void doSave(UIActionEvent pEvent) throws Throwable
 	{
+		tabsetPanelSelectArticles.setSelectedIndex(0);
 		save();
 	}
 
