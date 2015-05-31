@@ -7,69 +7,69 @@
   <classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
   <classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
   <classpathentry kind="output" path="classes"/>
-  <classpathentry kind="lib" path="libs/server/activation.jar" />
-  <classpathentry kind="lib" path="libs/server/appserver.jar" />
-  <classpathentry kind="lib" path="libs/server/commons-fileupload-1.2.2.jar" />
-  <classpathentry kind="lib" path="libs/server/ContextMenu-4.2.1.jar" />
-  <classpathentry kind="lib" path="libs/server/db2jcc.jar" />
-  <classpathentry kind="lib" path="libs/server/db2jcc_license_cu.jar" />
-  <classpathentry kind="lib" path="libs/server/dom4j-1.6.1.jar" />
-  <classpathentry kind="lib" path="libs/server/fontbox-1.8.1.jar" />
-  <classpathentry kind="lib" path="libs/server/google-collections-0.9.jar" />
-  <classpathentry kind="lib" path="libs/server/gson-2.2.jar" />
-  <classpathentry kind="lib" path="libs/server/iText-4.2.0.mpl.jar" />
-  <classpathentry kind="lib" path="libs/server/iText-rtf-4.2.0.mpl.jar" />
-  <classpathentry kind="lib" path="libs/server/jtds-1.2.8.jar" />
-  <classpathentry kind="lib" path="libs/server/jvx.jar" />
-  <classpathentry kind="lib" path="libs/server/jvxhelp-server.jar" />
-  <classpathentry kind="lib" path="libs/server/jvxhelp-themes.jar" />
-  <classpathentry kind="lib" path="libs/server/jvxmobile-addons.jar" />
-  <classpathentry kind="lib" path="libs/server/jvxmobile.jar" />
-  <classpathentry kind="lib" path="libs/server/jvxvaadin-client.jar" />
-  <classpathentry kind="lib" path="libs/server/jvxvaadin-themes.jar" />
-  <classpathentry kind="lib" path="libs/server/jvxvaadincharts-server.jar" />
-  <classpathentry kind="lib" path="libs/server/jvxweb.jar" />
-  <classpathentry kind="lib" path="libs/server/lucene-analyzers-common-4.2.1.jar" />
-  <classpathentry kind="lib" path="libs/server/lucene-core-4.2.1.jar" />
-  <classpathentry kind="lib" path="libs/server/lucene-queryparser-4.2.1.jar" />
-  <classpathentry kind="lib" path="libs/server/mail.jar" />
-  <classpathentry kind="lib" path="libs/server/oracle_10g.jar" />
-  <classpathentry kind="lib" path="libs/server/org.codehaus.jackson.core.jar" />
-  <classpathentry kind="lib" path="libs/server/org.codehaus.jackson.mapper.jar" />
-  <classpathentry kind="lib" path="libs/server/org.restlet.ext.fileupload.jar" />
-  <classpathentry kind="lib" path="libs/server/org.restlet.ext.jackson.jar" />
-  <classpathentry kind="lib" path="libs/server/org.restlet.ext.net.jar" />
-  <classpathentry kind="lib" path="libs/server/org.restlet.ext.servlet.jar" />
-  <classpathentry kind="lib" path="libs/server/org.restlet.jar" />
-  <classpathentry kind="lib" path="libs/server/pdfbox-1.8.1.jar" />
-  <classpathentry kind="lib" path="libs/server/poi-3.9-20121203.jar" />
-  <classpathentry kind="lib" path="libs/server/poi-ooxml-3.9-20121203.jar" />
-  <classpathentry kind="lib" path="libs/server/poi-ooxml-schemas-3.9-20121203.jar" />
-  <classpathentry kind="lib" path="libs/server/postgresql-9.0-801.jdbc3.jar" />
-  <classpathentry kind="lib" path="libs/server/projxvaadin-api.jar" />
-  <classpathentry kind="lib" path="libs/server/projxvaadin-server.jar" />
-  <classpathentry kind="lib" path="libs/server/sqljdbc4.jar" />
-  <classpathentry kind="lib" path="libs/server/stax-api-1.0.1.jar" />
-  <classpathentry kind="lib" path="libs/server/vaadin-charts-1.1.1.jar" />
-  <classpathentry kind="lib" path="libs/server/vaadin-shared-deps-1.0.2.jar" />
-  <classpathentry kind="lib" path="libs/server/xmlbeans-2.3.0.jar" />
-  <classpathentry kind="lib" path="libs/server/zxing.jar" />
-  <classpathentry kind="lib" path="libs/server/appsclient.jar" />
-  <classpathentry kind="lib" path="libs/server/projx.jar" />
+  <classpathentry kind="lib" path="libs/server/activation.jar"/>
+  <classpathentry kind="lib" path="libs/server/appserver.jar"/>
+  <classpathentry kind="lib" path="libs/server/commons-fileupload-1.2.2.jar"/>
+  <classpathentry kind="lib" path="libs/server/db2jcc.jar"/>
+  <classpathentry kind="lib" path="libs/server/db2jcc_license_cu.jar"/>
+  <classpathentry kind="lib" path="libs/server/dom4j-1.6.1.jar"/>
+  <classpathentry kind="lib" path="libs/server/fontbox-1.8.1.jar"/>
+  <classpathentry kind="lib" path="libs/server/google-collections-0.9.jar"/>
+  <classpathentry kind="lib" path="libs/server/gson-2.2.jar"/>
+  <classpathentry kind="lib" path="libs/server/iText-4.2.0.mpl.jar"/>
+  <classpathentry kind="lib" path="libs/server/iText-rtf-4.2.0.mpl.jar"/>
+  <classpathentry kind="lib" path="libs/server/jtds-1.2.8.jar"/>
+  <classpathentry kind="lib" path="libs/server/jvx.jar"/>
+  <classpathentry kind="lib" path="libs/server/jvxhelp-server.jar"/>
+  <classpathentry kind="lib" path="libs/server/jvxhelp-themes.jar"/>
+  <classpathentry kind="lib" path="libs/server/jvxmobile-addons.jar"/>
+  <classpathentry kind="lib" path="libs/server/jvxmobile.jar"/>
+  <classpathentry kind="lib" path="libs/server/jvxvaadin-client.jar"/>
+  <classpathentry kind="lib" path="libs/server/jvxvaadin-themes.jar"/>
+  <classpathentry kind="lib" path="libs/server/jvxvaadincharts-server.jar"/>
+  <classpathentry kind="lib" path="libs/server/jvxweb.jar"/>
+  <classpathentry kind="lib" path="libs/server/lucene-analyzers-common-4.2.1.jar"/>
+  <classpathentry kind="lib" path="libs/server/lucene-core-4.2.1.jar"/>
+  <classpathentry kind="lib" path="libs/server/lucene-queryparser-4.2.1.jar"/>
+  <classpathentry kind="lib" path="libs/server/mail.jar"/>
+  <classpathentry kind="lib" path="libs/server/org.restlet.ext.fileupload.jar"/>
+  <classpathentry kind="lib" path="libs/server/org.restlet.ext.jackson.jar"/>
+  <classpathentry kind="lib" path="libs/server/org.restlet.ext.servlet.jar"/>
+  <classpathentry kind="lib" path="libs/server/org.restlet.jar"/>
+  <classpathentry kind="lib" path="libs/server/pdfbox-1.8.1.jar"/>
+  <classpathentry kind="lib" path="libs/server/poi-3.9-20121203.jar"/>
+  <classpathentry kind="lib" path="libs/server/poi-ooxml-3.9-20121203.jar"/>
+  <classpathentry kind="lib" path="libs/server/poi-ooxml-schemas-3.9-20121203.jar"/>
+  <classpathentry kind="lib" path="libs/server/postgresql-9.0-801.jdbc3.jar"/>
+  <classpathentry kind="lib" path="libs/server/projxvaadin-server.jar"/>
+  <classpathentry kind="lib" path="libs/server/sqljdbc4.jar"/>
+  <classpathentry kind="lib" path="libs/server/stax-api-1.0.1.jar"/>
+  <classpathentry kind="lib" path="libs/server/xmlbeans-2.3.0.jar"/>
+  <classpathentry kind="lib" path="libs/server/zxing.jar"/>
+  <classpathentry kind="lib" path="libs/server/appsclient.jar"/>
+  <classpathentry kind="lib" path="libs/server/projx.jar"/>
   <classpathentry kind="lib" path="libs/client/jfreechart-1.0.13.jar"/>
   <classpathentry kind="lib" path="libs/client/jcommon-1.0.16.jar"/>
-  <classpathentry kind="lib" path="libs/server/args4j-2.0.16.jar" />
-  <classpathentry kind="lib" path="libs/server/commons-lang3-3.1.jar" />
-  <classpathentry kind="lib" path="libs/server/commons-math3-3.0.jar" />
-  <classpathentry kind="lib" path="libs/server/commons-io-2.2.jar" />
-  <classpathentry kind="lib" path="libs/server/vaadin-client-compiled-7.1.7.jar" />
-  <classpathentry kind="lib" path="libs/server/vaadin-push-7.1.7.jar" />
-  <classpathentry kind="lib" path="libs/server/vaadin-server-7.1.7.jar" />
-  <classpathentry kind="lib" path="libs/server/vaadin-shared-7.1.7.jar" />
-  <classpathentry kind="lib" path="libs/server/vaadin-slf4j-jdk14-1.6.1.jar" />
-  <classpathentry kind="lib" path="libs/server/vaadin-theme-compiler-7.1.7.jar" />
-  <classpathentry kind="lib" path="libs/server/vaadin-themes-7.1.7.jar" />
-  <classpathentry kind="lib" path="libs/server/mysql-connector-java-5.1.14-bin.jar" />
-  <classpathentry kind="lib" path="libs/server/validation-api-1.0.0.GA-sources.jar" />
-  <classpathentry kind="lib" path="libs/server/jsoup-1.6.3.jar" />
+  <classpathentry kind="lib" path="libs/server/commons-io-2.2.jar"/>
+  <classpathentry kind="lib" path="libs/server/vaadin-slf4j-jdk14-1.6.1.jar"/>
+  <classpathentry kind="lib" path="libs/server/mysql-connector-java-5.1.14-bin.jar"/>
+  <classpathentry kind="lib" path="libs/server/sac-1.3.jar"/>
+  <classpathentry kind="lib" path="libs/server/validation-api-1.0.0.GA.jar"/>
+  <classpathentry kind="lib" path="libs/server/com.fasterxml.jackson.jar"/>
+  <classpathentry kind="lib" path="libs/server/oracle_12c.jar"/>
+  <classpathentry kind="lib" path="libs/server/atmosphere-runtime-2.2.4.vaadin5.jar"/>
+  <classpathentry kind="lib" path="libs/server/commons-logging-1.1.3.jar"/>
+  <classpathentry kind="lib" path="libs/server/ContextMenu-4.5.0.jar"/>
+  <classpathentry kind="lib" path="libs/server/cssparser-0.9.11.jar"/>
+  <classpathentry kind="lib" path="libs/server/flute-1.3.0.gg2.jar"/>
+  <classpathentry kind="lib" path="libs/server/guava-16.0.1.vaadin1.jar"/>
+  <classpathentry kind="lib" path="libs/server/jsoup-1.8.1.jar"/>
+  <classpathentry kind="lib" path="libs/server/streamhtmlparser-jsilver-0.0.10.vaadin1.jar"/>
+  <classpathentry kind="lib" path="libs/server/vaadin-charts-2.0.0.jar"/>
+  <classpathentry kind="lib" path="libs/server/vaadin-sass-compiler-0.9.12.jar"/>
+  <classpathentry kind="lib" path="libs/server/vaadin-client-compiled-7.4.5.jar"/>
+  <classpathentry kind="lib" path="libs/server/vaadin-push-7.4.5.jar"/>
+  <classpathentry kind="lib" path="libs/server/vaadin-server-7.4.5.jar"/>
+  <classpathentry kind="lib" path="libs/server/vaadin-shared-7.4.5.jar"/>
+  <classpathentry kind="lib" path="libs/server/vaadin-themes-7.4.5.jar"/>
 </classpath>
