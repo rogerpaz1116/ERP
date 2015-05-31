@@ -22,6 +22,8 @@ import com.sibvisions.apps.server.object.IWorkScreenAccess;
 import com.sibvisions.rad.persist.jdbc.DBAccess;
 import com.sibvisions.rad.persist.jdbc.DBCredentials;
 import com.sibvisions.rad.server.security.DBSecurityManager;
+import java.lang.reflect.Method;
+import com.sibvisions.util.Reflective;
 
 /**
  * The Session management for DemoERP.
@@ -84,6 +86,53 @@ public class Session extends Application
 		}
 
 		return wsac;
+	}
+
+	/**
+	 * Commits current changes.
+	 * 
+	 * @throws Exception if db operation fails
+	 */
+	public void doCommit() throws Exception
+	{
+		Method[] met = Reflective.getMethodsByReturnValue(getClass(), DBAccess.class, true);
+		for (int i = 0; i < met.length; i++)
+		{
+			DBAccess dba = (DBAccess)met[i].invoke(this);
+			dba.commit();
+		}
+	}
+
+	/**
+	 * Rollback current changes.
+	 * 
+	 * @throws Exception if db operation fails
+	 */
+	public void doRollback() throws Exception
+	{
+		Method[] met = Reflective.getMethodsByReturnValue(getClass(), DBAccess.class, true);
+		for (int i = 0; i < met.length; i++)
+		{
+			DBAccess dba = (DBAccess)met[i].invoke(this);
+			dba.rollback();
+		}
+	}
+
+	/**
+	 * Sets all database access objects to automatic or manual commit.
+	 * 
+	 * @param pAutoCommit <code>true</code> to enable automatic commit,
+	 *            <code>false</code> for manual commit
+	 * @throws Exception if changing commit property failed
+	 */
+	public void setAutoCommit(boolean pAutoCommit) throws Exception
+	{
+		Method[] met = Reflective.getMethodsByReturnValue(getClass(), DBAccess.class, true);
+		for (int i = 0; i < met.length; i++)
+		{
+			DBAccess dba = (DBAccess)met[i].invoke(this);
+			dba.setAutoCommit(pAutoCommit);
+		}
 	}
 
 } // Session

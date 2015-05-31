@@ -13,6 +13,7 @@
  * License for the specific language governing permissions and limitations under
  * the License.
  */
+
 package com.sibvisions.apps.demoerp.screens;
 
 import java.math.BigDecimal;
@@ -40,184 +41,184 @@ import com.sibvisions.apps.projx.screens.DataSourceWorkScreen;
 import com.sibvisions.rad.model.remote.RemoteDataBook;
 
 /**
- * The MobileArticleWorkScreen shows the article categories and all articles of this category in a table.
- * It is possible to add, update or delete articles.
+ * The MobileArticleWorkScreen shows the article categories and all articles of
+ * this category in a table. It is possible to add, update or delete articles.
  */
 public class MobileArticleWorkScreen extends DataSourceWorkScreen
 {
-	//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	// Class members
-	//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 	/**
 	 * editSearch.
 	 */
-	private FilterEditor			editSearch					= new FilterEditor();
+	private FilterEditor	editSearch					= new FilterEditor();
 
 	/**
 	 * editArticleArticle.
 	 */
-	private UIEditor				editArticleArticle			= new UIEditor();
+	private UIEditor		editArticleArticle			= new UIEditor();
 
 	/**
 	 * editArticleDescription.
 	 */
-	private UIEditor				editArticleDescription		= new UIEditor();
+	private UIEditor		editArticleDescription		= new UIEditor();
 
 	/**
 	 * editArticleArticleNr.
 	 */
-	private UIEditor				editArticleArticleNr		= new UIEditor();
+	private UIEditor		editArticleArticleNr		= new UIEditor();
 
 	/**
 	 * editArticlePrice.
 	 */
-	private UIEditor				editArticlePrice			= new UIEditor();
+	private UIEditor		editArticlePrice			= new UIEditor();
 
 	/**
 	 * editArticleUnitUnit.
 	 */
-	private UIEditor				editArticleUnitUnit			= new UIEditor();
+	private UIEditor		editArticleUnitUnit			= new UIEditor();
 
 	/**
 	 * editArticleCurrencyCurrency.
 	 */
-	private UIEditor				editArticleCurrencyCurrency	= new UIEditor();
+	private UIEditor		editArticleCurrencyCurrency	= new UIEditor();
 
 	/**
 	 * labelArticle.
 	 */
-	private UILabel					labelArticle				= new UILabel();
+	private UILabel			labelArticle				= new UILabel();
 
 	/**
 	 * labelDescription.
 	 */
-	private UILabel					labelDescription			= new UILabel();
+	private UILabel			labelDescription			= new UILabel();
 
 	/**
 	 * labelArticleNr.
 	 */
-	private UILabel					labelArticleNr				= new UILabel();
+	private UILabel			labelArticleNr				= new UILabel();
 
 	/**
 	 * labelSuchen.
 	 */
-	private UILabel					labelSuchen					= new UILabel();
+	private UILabel			labelSuchen					= new UILabel();
 
 	/**
 	 * labelPrice.
 	 */
-	private UILabel					labelPrice					= new UILabel();
+	private UILabel			labelPrice					= new UILabel();
 
 	/**
 	 * labelUnit.
 	 */
-	private UILabel					labelUnit					= new UILabel();
+	private UILabel			labelUnit					= new UILabel();
 
 	/**
 	 * labelCurrency.
 	 */
-	private UILabel					labelCurrency				= new UILabel();
+	private UILabel			labelCurrency				= new UILabel();
 
 	/**
 	 * formLayoutArticleDetail.
 	 */
-	private UIFormLayout			formLayoutArticleDetail		= new UIFormLayout();
+	private UIFormLayout	formLayoutArticleDetail		= new UIFormLayout();
 
 	/**
 	 * formLayoutSearch.
 	 */
-	private UIFormLayout			formLayoutSearch			= new UIFormLayout();
+	private UIFormLayout	formLayoutSearch			= new UIFormLayout();
 
 	/**
 	 * groupPanelArticle.
 	 */
-	private UIGroupPanel			groupPanelArticle			= new UIGroupPanel();
+	private UIGroupPanel	groupPanelArticle			= new UIGroupPanel();
 
 	/**
 	 * groupPanelArticleDetail.
 	 */
-	private UIGroupPanel			groupPanelArticleDetail		= new UIGroupPanel();
+	private UIGroupPanel	groupPanelArticleDetail		= new UIGroupPanel();
 
 	/**
 	 * groupPanelArticleCategory.
 	 */
-	private UIGroupPanel			groupPanelArticleCategory	= new UIGroupPanel();
+	private UIGroupPanel	groupPanelArticleCategory	= new UIGroupPanel();
 
 	/**
 	 * tableArticle.
 	 */
-	private NavigationTable			tableArticle				= new NavigationTable();
+	private NavigationTable	tableArticle				= new NavigationTable();
 
 	/**
 	 * navigationTable.
 	 */
-	private NavigationTable			navigationTable				= new NavigationTable();
+	private NavigationTable	navigationTable				= new NavigationTable();
 
 	/**
 	 * Its a article remote databook.
 	 */
-	private RemoteDataBook			rdbArticle					= new RemoteDataBook();
+	private RemoteDataBook	rdbArticle					= new RemoteDataBook();
 
 	/**
 	 * Its a offerarticle remote databook.
 	 */
-	private RemoteDataBook			rdbOfferarticle				= new RemoteDataBook();
+	private RemoteDataBook	rdbOfferarticle				= new RemoteDataBook();
 
 	/**
 	 * Its a articlecategory remote databook.
 	 */
-	private RemoteDataBook			rdbArticlecategory			= new RemoteDataBook();
+	private RemoteDataBook	rdbArticlecategory			= new RemoteDataBook();
 
 	/**
 	 * borderLayoutMain.
 	 */
-	private UIBorderLayout			borderLayoutMain			= new UIBorderLayout();
+	private UIBorderLayout	borderLayoutMain			= new UIBorderLayout();
 
 	/**
 	 * borderLayoutFirst.
 	 */
-	private UIBorderLayout			borderLayoutFirst			= new UIBorderLayout();
+	private UIBorderLayout	borderLayoutFirst			= new UIBorderLayout();
 
 	/**
 	 * borderLayoutSecond.
 	 */
-	private UIBorderLayout			borderLayoutSecond			= new UIBorderLayout();
+	private UIBorderLayout	borderLayoutSecond			= new UIBorderLayout();
 
 	/**
 	 * borderLayoutArticle.
 	 */
-	private UIBorderLayout			borderLayoutArticle			= new UIBorderLayout();
+	private UIBorderLayout	borderLayoutArticle			= new UIBorderLayout();
 
 	/**
 	 * borderLayoutArticleCategory.
 	 */
-	private UIBorderLayout			borderLayoutArticleCategory	= new UIBorderLayout();
+	private UIBorderLayout	borderLayoutArticleCategory	= new UIBorderLayout();
 
 	/**
 	 * splitPanelMain.
 	 */
-	private UISplitPanel			splitPanelMain				= new UISplitPanel();
+	private UISplitPanel	splitPanelMain				= new UISplitPanel();
 
 	/**
 	 * splitPanelMainFirst.
 	 */
-	private UIPanel					splitPanelMainFirst			= new UIPanel();
+	private UIPanel			splitPanelMainFirst			= new UIPanel();
 
 	/**
 	 * splitPanelMainSecond.
 	 */
-	private UIPanel					splitPanelMainSecond		= new UIPanel();
+	private UIPanel			splitPanelMainSecond		= new UIPanel();
 
 	/**
 	 * panelSearch.
 	 */
-	private UIPanel					panelSearch					= new UIPanel();
+	private UIPanel			panelSearch					= new UIPanel();
 
-	//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	// Initialization
-	//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-	
+	// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 	/**
 	 * Constructs a new instance of <code>ArticleWorkScreen</code>.
 	 * 
@@ -288,7 +289,7 @@ public class MobileArticleWorkScreen extends DataSourceWorkScreen
 
 		labelArticleNr.setText("Article Nr");
 
-		labelSuchen.setText("Suchen");
+		labelSuchen.setText("Search");
 
 		labelPrice.setText("Price");
 
@@ -376,9 +377,9 @@ public class MobileArticleWorkScreen extends DataSourceWorkScreen
 		add(splitPanelMain, UIBorderLayout.CENTER);
 	}
 
-	//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	// User-defined methods
-	//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 	/**
 	 * Set values in rdbArticles after the insert.
@@ -391,9 +392,8 @@ public class MobileArticleWorkScreen extends DataSourceWorkScreen
 	}
 
 	/**
-	 * Sets the filter to the selected category. 
-	 * 
-	 * Is called after an item in the tree is selected.
+	 * Sets the filter to the selected category. Is called after an item in the
+	 * tree is selected.
 	 */
 	public void doFilterCategory() throws Throwable
 	{
@@ -414,7 +414,7 @@ public class MobileArticleWorkScreen extends DataSourceWorkScreen
 	/**
 	 * Creates a new article number from the generated id.
 	 * 
-	 * @throws Throwable 
+	 * @throws Throwable
 	 */
 	public void doCreateArticleNr() throws Throwable
 	{

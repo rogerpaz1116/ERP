@@ -36,7 +36,7 @@ import com.sibvisions.apps.projx.screens.DataSourceWorkScreen;
 import com.sibvisions.rad.model.remote.RemoteDataBook;
 
 /**
- * Der MobileOffersWorkScreen verwaltet...
+ * The MobileOffersWorkScreen shows all offers and the screen was optimized for mobile devices.
  */
 public class MobileOffersWorkScreen extends DataSourceWorkScreen
 {

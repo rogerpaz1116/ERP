@@ -13,6 +13,7 @@
  * License for the specific language governing permissions and limitations under
  * the License.
  */
+
 package com.sibvisions.apps.demoerp.screens;
 
 import java.util.Hashtable;
@@ -39,15 +40,17 @@ import com.sibvisions.apps.components.NavigationTable;
 import com.sibvisions.apps.projx.ProjXUtil;
 import com.sibvisions.apps.projx.screens.DataSourceWorkScreen;
 import com.sibvisions.rad.model.remote.RemoteDataBook;
+import java.lang.String;
+import javax.rad.genui.UIInsets;
 
 /**
  * The OffersWorkScreen shows all offers in a table.
  */
 public class OffersWorkScreen extends DataSourceWorkScreen
 {
-	//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	// Class members
-	//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 	/**
 	 * buttonEditOffer.
@@ -129,9 +132,9 @@ public class OffersWorkScreen extends DataSourceWorkScreen
 	 */
 	private RemoteDataBook	rdbOrder_				= new RemoteDataBook();
 
-	//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	// Initialization
-	//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 	/**
 	 * Constructs a new instance of <code>OffersWorkScreen</code>.
@@ -167,17 +170,17 @@ public class OffersWorkScreen extends DataSourceWorkScreen
 		rdbOffer.getRowDefinition().getColumnDefinition("VALIDUNTIL").getDataType().setCellEditor(ProjXUtil.DATE_SHORT_EDITOR);
 
 		rdbOffer.getRowDefinition().getColumnDefinition("CUSTOMER_NR").setLabel("Customer");
-		
+
 		rdbOffer.getRowDefinition().getColumnDefinition("CREATIONDATE").setLabel("Offer date");
-		
+
 		rdbOffer.getRowDefinition().getColumnDefinition("VALIDUNTIL").setLabel("Valid until");
-		
+
 		rdbOffer.getRowDefinition().getColumnDefinition("TOTALPRICE").setLabel("Total price");
-		
+
 		rdbOffer.getRowDefinition().getColumnDefinition("FIXPRICE").setLabel("Fix price");
-		
+
 		rdbOffer.getRowDefinition().getColumnDefinition("ISORDERED").setLabel("Is ordered");
-		
+
 		rdbOffer.getRowDefinition().getColumnDefinition("GROSSTOTALPRICE").setLabel("Gross totalprice");
 
 		rdbOffer.getRowDefinition().getColumnDefinition("TOTALPRICE").getDataType().setCellEditor(ProjXUtil.CURRENCY);
@@ -217,7 +220,7 @@ public class OffersWorkScreen extends DataSourceWorkScreen
 						ITableControl.class,
 						new ColumnView(
 								new String[] { "OFFER_NR", "TITLE", "CREATIONDATE", "VALIDUNTIL", "CUSTOMER_NR", "TOTALPRICE", "TAX_IN_PERCENT", "DISCOUNT_IN_PERCENT", "GROSSTOTALPRICE", "FIXPRICE", "ISORDERED" }));
-		
+
 		rdbOffer.getRowDefinition().getColumnDefinition("TAX_IN_PERCENT").setLabel("Tax in %");
 		rdbOffer.getRowDefinition().getColumnDefinition("DISCOUNT_IN_PERCENT").setLabel("Discount in %");
 	}
@@ -229,7 +232,7 @@ public class OffersWorkScreen extends DataSourceWorkScreen
 	 */
 	private void initializeUI() throws Throwable
 	{
-		labelSearch.setText("Suchen");
+		labelSearch.setText("Search");
 
 		filterEditor.setDataRow(rdbOffer);
 
@@ -237,7 +240,7 @@ public class OffersWorkScreen extends DataSourceWorkScreen
 		navigationTable.setDataBook(rdbOffer);
 		navigationTable.setAutoResize(false);
 		navigationTable.setInsertVisible(false);
-		
+
 		buttonEditOffer.setText("Show Offer");
 		buttonEditOffer.setImage(UIImage.getImage("/com/sibvisions/apps/demoerp/images/invoice.png"));
 		buttonEditOffer.eventAction().addListener(this, "doEditOffer");
@@ -248,7 +251,7 @@ public class OffersWorkScreen extends DataSourceWorkScreen
 		buttonEditOffer.setFont(new UIFont("Arial", UIFont.BOLD, 13));
 		buttonEditOffer.setImageTextGap(2);
 		buttonEditOffer.setPreferredSize(160, 60);
-		
+
 		buttonGenerateReport.setText("Download Offer");
 		buttonGenerateReport.setImage(UIImage.getImage("/com/sibvisions/apps/demoerp/images/export_database2.png"));
 		buttonGenerateReport.eventAction().addListener(this, "doGenerateOfferReport");
@@ -259,7 +262,7 @@ public class OffersWorkScreen extends DataSourceWorkScreen
 		buttonGenerateReport.setFont(new UIFont("Arial", UIFont.BOLD, 13));
 		buttonGenerateReport.setImageTextGap(2);
 		buttonGenerateReport.setPreferredSize(160, 60);
-		
+
 		buttonOrder.setText("Generate Order");
 		buttonOrder.setImage(UIImage.getImage("/com/sibvisions/apps/demoerp/images/paypal.png"));
 		buttonOrder.eventAction().addListener(this, "doOrder");
@@ -270,6 +273,8 @@ public class OffersWorkScreen extends DataSourceWorkScreen
 		buttonOrder.setFont(new UIFont("Arial", UIFont.BOLD, 13));
 		buttonOrder.setImageTextGap(2);
 		buttonOrder.setPreferredSize(160, 60);
+
+		formLayout2.setMargins(new UIInsets(0, 0, 10, 0));
 
 		panelActions.setLayout(formLayoutActions);
 		panelActions.add(buttonEditOffer, formLayoutActions.getConstraints(-3, 0));
@@ -289,9 +294,9 @@ public class OffersWorkScreen extends DataSourceWorkScreen
 		add(panelActions, UIBorderLayout.SOUTH);
 	}
 
-	//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	// User-defined methods
-	//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 	/**
 	 * Creates the offer report.
@@ -352,7 +357,7 @@ public class OffersWorkScreen extends DataSourceWorkScreen
 	{
 		Hashtable<String, Object> htParams = new Hashtable<String, Object>();
 		htParams.put("ID", rdbOffer.getValue("ID"));
-		
+
 		getApplication().openWorkScreen("com.sibvisions.apps.demoerp.screens.OfferWorkScreen", htParams);
 	}
 

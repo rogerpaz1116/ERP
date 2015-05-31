@@ -13,6 +13,7 @@
  * License for the specific language governing permissions and limitations under
  * the License.
  */
+
 package com.sibvisions.apps.demoerp.screens;
 
 import java.math.BigDecimal;
@@ -49,409 +50,410 @@ import com.sibvisions.apps.projx.screens.DataSourceWorkScreen;
 import com.sibvisions.apps.util.Var;
 import com.sibvisions.apps.vaadin.web.IExpandableView;
 import com.sibvisions.rad.model.remote.RemoteDataBook;
+import java.lang.String;
 
 /**
  * The OrderWorkScreen shows all orders and the details to the orders.
  */
 public class OrderWorkScreen extends DataSourceWorkScreen implements IExpandableView
 {
-	//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	// Class members
-	//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 	/**
 	 * tabsetPanel.
 	 */
-	private UITabsetPanel	tabsetPanel						= new UITabsetPanel();
+	private UITabsetPanel		tabsetPanel						= new UITabsetPanel();
 
 	/**
 	 * filterEditor.
 	 */
-	private FilterEditor	filterEditor					= new FilterEditor();
+	private FilterEditor		filterEditor					= new FilterEditor();
 
 	/**
 	 * editOrder_OrderNr.
 	 */
-	private UIEditor		editOrder_OrderNr				= new UIEditor();
+	private UIEditor			editOrder_OrderNr				= new UIEditor();
 
 	/**
 	 * editOrder_Deliverydate.
 	 */
-	private UIEditor		editOrder_Deliverydate			= new UIEditor();
+	private UIEditor			editOrder_Deliverydate			= new UIEditor();
 
 	/**
 	 * editOrder_Orderdate.
 	 */
-	private UIEditor		editOrder_Orderdate				= new UIEditor();
+	private UIEditor			editOrder_Orderdate				= new UIEditor();
 
 	/**
 	 * editOrder_Termsofpayment.
 	 */
-	private UIEditor		editOrder_Termsofpayment		= new UIEditor();
+	private UIEditor			editOrder_Termsofpayment		= new UIEditor();
 
 	/**
 	 * editOrder_CustomerNr.
 	 */
-	private UIEditor		editOrder_CustomerNr			= new UIEditor();
+	private UIEditor			editOrder_CustomerNr			= new UIEditor();
 
 	/**
 	 * editOrder_Totalprice.
 	 */
-	private UIEditor		editOrder_Totalprice			= new UIEditor();
+	private UIEditor			editOrder_Totalprice			= new UIEditor();
 
 	/**
 	 * editOrder_TaxInPercent.
 	 */
-	private UIEditor		editOrder_TaxInPercent			= new UIEditor();
+	private UIEditor			editOrder_TaxInPercent			= new UIEditor();
 
 	/**
 	 * editOrder_DiscountInPercent.
 	 */
-	private UIEditor		editOrder_DiscountInPercent		= new UIEditor();
+	private UIEditor			editOrder_DiscountInPercent		= new UIEditor();
 
 	/**
 	 * editOrder_Grosstotalprice.
 	 */
-	private UIEditor		editOrder_Grosstotalprice		= new UIEditor();
+	private UIEditor			editOrder_Grosstotalprice		= new UIEditor();
 
 	/**
 	 * editOrder_OfferNr.
 	 */
-	private UIEditor		editOrder_OfferNr				= new UIEditor();
+	private UIEditor			editOrder_OfferNr				= new UIEditor();
 
 	/**
 	 * editOrder_Orderdocumentname.
 	 */
-	private UIEditor		editOrder_Orderdocumentname		= new UIEditor();
+	private UIEditor			editOrder_Orderdocumentname		= new UIEditor();
 
 	/**
 	 * editOrder_BillingNr.
 	 */
-	private UIEditor		editOrder_BillingNr				= new UIEditor();
+	private UIEditor			editOrder_BillingNr				= new UIEditor();
 
 	/**
 	 * editOrder_Billingdate.
 	 */
-	private UIEditor		editOrder_Billingdate			= new UIEditor();
+	private UIEditor			editOrder_Billingdate			= new UIEditor();
 
 	/**
 	 * editOrder_Billingcompany.
 	 */
-	private UIEditor		editOrder_Billingcompany		= new UIEditor();
+	private UIEditor			editOrder_Billingcompany		= new UIEditor();
 
 	/**
 	 * editOrder_Billingzip.
 	 */
-	private UIEditor		editOrder_Billingzip			= new UIEditor();
+	private UIEditor			editOrder_Billingzip			= new UIEditor();
 
 	/**
 	 * editOrder_Billingaddress.
 	 */
-	private UIEditor		editOrder_Billingaddress		= new UIEditor();
+	private UIEditor			editOrder_Billingaddress		= new UIEditor();
 
 	/**
 	 * editOrder_Billingcity.
 	 */
-	private UIEditor		editOrder_Billingcity			= new UIEditor();
+	private UIEditor			editOrder_Billingcity			= new UIEditor();
 
 	/**
 	 * editOrder_Ispaid.
 	 */
-	private UIEditor		editOrder_Ispaid				= new UIEditor();
+	private UIEditor			editOrder_Ispaid				= new UIEditor();
 
 	/**
 	 * labelOrder_nr.
 	 */
-	private UILabel			labelOrder_nr					= new UILabel();
+	private UILabel				labelOrder_nr					= new UILabel();
 
 	/**
 	 * labelOrderdate.
 	 */
-	private UILabel			labelOrderdate					= new UILabel();
+	private UILabel				labelOrderdate					= new UILabel();
 
 	/**
 	 * labelDeliverydate.
 	 */
-	private UILabel			labelDeliverydate				= new UILabel();
+	private UILabel				labelDeliverydate				= new UILabel();
 
 	/**
 	 * labelTermsofpayment.
 	 */
-	private UILabel			labelTermsofpayment				= new UILabel();
+	private UILabel				labelTermsofpayment				= new UILabel();
 
 	/**
 	 * labelTermsofpayment1.
 	 */
-	private UILabel			labelTermsofpayment1			= new UILabel();
+	private UILabel				labelTermsofpayment1			= new UILabel();
 
 	/**
 	 * labelTotalprice.
 	 */
-	private UILabel			labelTotalprice					= new UILabel();
+	private UILabel				labelTotalprice					= new UILabel();
 
 	/**
 	 * labelPercentage1.
 	 */
-	private UILabel			labelPercentage1				= new UILabel();
+	private UILabel				labelPercentage1				= new UILabel();
 
 	/**
 	 * labelCurrency2.
 	 */
-	private UILabel			labelCurrency2					= new UILabel();
+	private UILabel				labelCurrency2					= new UILabel();
 
 	/**
 	 * labelTaxInPercent.
 	 */
-	private UILabel			labelTaxInPercent				= new UILabel();
+	private UILabel				labelTaxInPercent				= new UILabel();
 
 	/**
 	 * labelDiscountInPercent.
 	 */
-	private UILabel			labelDiscountInPercent			= new UILabel();
+	private UILabel				labelDiscountInPercent			= new UILabel();
 
 	/**
 	 * labelPercentage2.
 	 */
-	private UILabel			labelPercentage2				= new UILabel();
+	private UILabel				labelPercentage2				= new UILabel();
 
 	/**
 	 * labelGrosstotalprice.
 	 */
-	private UILabel			labelGrosstotalprice			= new UILabel();
+	private UILabel				labelGrosstotalprice			= new UILabel();
 
 	/**
 	 * labelCurrency1.
 	 */
-	private UILabel			labelCurrency1					= new UILabel();
+	private UILabel				labelCurrency1					= new UILabel();
 
 	/**
 	 * labelOfferNr.
 	 */
-	private UILabel			labelOfferNr					= new UILabel();
+	private UILabel				labelOfferNr					= new UILabel();
 
 	/**
 	 * labelSearch.
 	 */
-	private UILabel			labelSearch						= new UILabel();
+	private UILabel				labelSearch						= new UILabel();
 
 	/**
 	 * labelOrderdocumentname.
 	 */
-	private UILabel			labelOrderdocumentname			= new UILabel();
+	private UILabel				labelOrderdocumentname			= new UILabel();
 
 	/**
 	 * labelBillingdate.
 	 */
-	private UILabel			labelBillingdate				= new UILabel();
+	private UILabel				labelBillingdate				= new UILabel();
 
 	/**
 	 * labelBillingdate1.
 	 */
-	private UILabel			labelBillingdate1				= new UILabel();
+	private UILabel				labelBillingdate1				= new UILabel();
 
 	/**
 	 * labelBillingcompany.
 	 */
-	private UILabel			labelBillingcompany				= new UILabel();
+	private UILabel				labelBillingcompany				= new UILabel();
 
 	/**
 	 * labelBillingzip.
 	 */
-	private UILabel			labelBillingzip					= new UILabel();
+	private UILabel				labelBillingzip					= new UILabel();
 
 	/**
 	 * labelBillingcompany1.
 	 */
-	private UILabel			labelBillingcompany1			= new UILabel();
+	private UILabel				labelBillingcompany1			= new UILabel();
 
 	/**
 	 * labelBillingcity.
 	 */
-	private UILabel			labelBillingcity				= new UILabel();
+	private UILabel				labelBillingcity				= new UILabel();
 
 	/**
 	 * labelIspaid.
 	 */
-	private UILabel			labelIspaid						= new UILabel();
+	private UILabel				labelIspaid						= new UILabel();
 
 	/**
 	 * buttonSave.
 	 */
-	private UIButton		buttonSave						= new UIButton();
+	private UIButton			buttonSave						= new UIButton();
 
 	/**
 	 * buttonGenerateReport.
 	 */
-	private UIButton		buttonGenerateReport			= new UIButton();
+	private UIButton			buttonGenerateReport			= new UIButton();
 
 	/**
 	 * buttonEditOffer.
 	 */
-	private UIButton		buttonEditOffer					= new UIButton();
+	private UIButton			buttonEditOffer					= new UIButton();
 
 	/**
 	 * buttonUpload.
 	 */
-	private UIButton		buttonUpload					= new UIButton();
+	private UIButton			buttonUpload					= new UIButton();
 
 	/**
 	 * buttonDownload.
 	 */
-	private UIButton		buttonDownload					= new UIButton();
+	private UIButton			buttonDownload					= new UIButton();
 
 	/**
 	 * panelActions.
 	 */
-	private UIPanel			panelActions					= new UIPanel();
+	private UIPanel				panelActions					= new UIPanel();
 
 	/**
 	 * formLayoutActions.
 	 */
-	private UIFormLayout	formLayoutActions				= new UIFormLayout();
+	private UIFormLayout		formLayoutActions				= new UIFormLayout();
 
 	/**
 	 * formLayoutOrder.
 	 */
-	private UIFormLayout	formLayoutOrder					= new UIFormLayout();
+	private UIFormLayout		formLayoutOrder					= new UIFormLayout();
 
 	/**
 	 * formLayoutArticles.
 	 */
-	private UIFormLayout	formLayoutArticles				= new UIFormLayout();
+	private UIFormLayout		formLayoutArticles				= new UIFormLayout();
 
 	/**
 	 * formLayoutSearch.
 	 */
-	private UIFormLayout	formLayoutSearch				= new UIFormLayout();
+	private UIFormLayout		formLayoutSearch				= new UIFormLayout();
 
 	/**
 	 * formLayoutBillingInner.
 	 */
-	private UIFormLayout	formLayoutBillingInner			= new UIFormLayout();
+	private UIFormLayout		formLayoutBillingInner			= new UIFormLayout();
 
 	/**
 	 * formLayoutPrices.
 	 */
-	private UIFormLayout	formLayoutPrices				= new UIFormLayout();
+	private UIFormLayout		formLayoutPrices				= new UIFormLayout();
 
 	/**
 	 * panelOrder.
 	 */
-	private UIScrollPanel			panelOrder						= new UIScrollPanel();
+	private UIScrollPanel		panelOrder						= new UIScrollPanel();
 
 	/**
 	 * groupPanelArticles.
 	 */
-	private UIGroupPanel	groupPanelArticles				= new UIGroupPanel();
+	private UIGroupPanel		groupPanelArticles				= new UIGroupPanel();
 
 	/**
 	 * tableOrder_.
 	 */
-	private NavigationTable	tableOrder_						= new NavigationTable();
+	private NavigationTable		tableOrder_						= new NavigationTable();
 
 	/**
 	 * tableOfferarticle.
 	 */
-	private NavigationTable	tableOfferarticle				= new NavigationTable();
+	private NavigationTable		tableOfferarticle				= new NavigationTable();
 
 	/**
 	 * Its a order_ remote databook.
 	 */
-	private RemoteDataBook	rdbOrder_						= new RemoteDataBook();
+	private RemoteDataBook		rdbOrder_						= new RemoteDataBook();
 
 	/**
 	 * Its a offerarticle remote databook.
 	 */
-	private RemoteDataBook	rdbOfferarticle					= new RemoteDataBook();
+	private RemoteDataBook		rdbOfferarticle					= new RemoteDataBook();
 
 	/**
 	 * borderLayoutMain.
 	 */
-	private UIBorderLayout	borderLayoutMain				= new UIBorderLayout();
+	private UIBorderLayout		borderLayoutMain				= new UIBorderLayout();
 
 	/**
 	 * borderLayoutLeft.
 	 */
-	private UIBorderLayout	borderLayoutLeft				= new UIBorderLayout();
+	private UIBorderLayout		borderLayoutLeft				= new UIBorderLayout();
 
 	/**
 	 * borderLayoutRight.
 	 */
-	private UIFormLayout	formLayoutRight					= new UIFormLayout();
+	private UIFormLayout		formLayoutRight					= new UIFormLayout();
 
 	/**
 	 * borderLayoutOrderInformation.
 	 */
-	private UIBorderLayout	borderLayoutOrderInformation	= new UIBorderLayout();
+	private UIBorderLayout		borderLayoutOrderInformation	= new UIBorderLayout();
 
 	/**
 	 * borderLayoutBillingInformation.
 	 */
-	private UIBorderLayout	borderLayoutBillingInformation	= new UIBorderLayout();
+	private UIBorderLayout		borderLayoutBillingInformation	= new UIBorderLayout();
 
 	/**
 	 * Panel Right inner.
 	 */
-	private UIPanel			panelRightInner					= new UIPanel();
+	private UIPanel				panelRightInner					= new UIPanel();
 
 	/**
 	 * Panel BorderLayoutRightInner.
 	 */
-	private UIBorderLayout	borderLayoutRightInner			= new UIBorderLayout();
+	private UIBorderLayout		borderLayoutRightInner			= new UIBorderLayout();
 
 	/**
 	 * borderLayout1.
 	 */
-	private UIBorderLayout	borderLayout1					= new UIBorderLayout();
+	private UIBorderLayout		borderLayout1					= new UIBorderLayout();
 
 	/**
 	 * splitPanelMain.
 	 */
-	private UISplitPanel	splitPanelMain					= new UISplitPanel();
+	private UISplitPanel		splitPanelMain					= new UISplitPanel();
 
 	/**
 	 * splitPanelMainFirst.
 	 */
-	private UIPanel			splitPanelMainFirst				= new UIPanel();
+	private UIPanel				splitPanelMainFirst				= new UIPanel();
 
 	/**
 	 * splitPanelMainSecond.
 	 */
-	private UIPanel			splitPanelMainSecond			= new UIPanel();
+	private UIPanel				splitPanelMainSecond			= new UIPanel();
 
 	/**
 	 * panelSearch.
 	 */
-	private UIPanel			panelSearch						= new UIPanel();
+	private UIPanel				panelSearch						= new UIPanel();
 
 	/**
 	 * panelOrderInformation.
 	 */
-	private UIPanel			panelOrderInformation			= new UIPanel();
+	private UIPanel				panelOrderInformation			= new UIPanel();
 
 	/**
 	 * panelBillingInformation.
 	 */
-	private UIPanel			panelBillingInformation			= new UIPanel();
+	private UIPanel				panelBillingInformation			= new UIPanel();
 
 	/**
 	 * panelBillingInner.
 	 */
-	private UIPanel			panelBillingInner				= new UIPanel();
+	private UIPanel				panelBillingInner				= new UIPanel();
 
 	/**
 	 * panelPrices.
 	 */
-	private UIPanel			panelPrices						= new UIPanel();
-	
+	private UIPanel				panelPrices						= new UIPanel();
+
 	/**
 	 * The current view state.
 	 */
-	private ExpandableViewState evsCurrent 					= ExpandableViewState.Default;
+	private ExpandableViewState	evsCurrent						= ExpandableViewState.Default;
 
-	//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	// Initialization
-	//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 	/**
 	 * Constructs a new instance of <code>OrderWorkScreen</code>.
@@ -513,7 +515,7 @@ public class OrderWorkScreen extends DataSourceWorkScreen implements IExpandable
 		ProjXUtil.addAskDeleteDialog(rdbOrder_);
 
 		rdbOrder_.getRowDefinition().getColumnDefinition("ISPAID").setLabel("Is paid");
-		
+
 		rdbOfferarticle.getRowDefinition().getColumnDefinition("NUMBEROF").setLabel("Number of");
 	}
 
@@ -546,7 +548,7 @@ public class OrderWorkScreen extends DataSourceWorkScreen implements IExpandable
 		buttonSave.setFont(new UIFont("Arial", UIFont.BOLD, 13));
 		buttonSave.setImageTextGap(2);
 		buttonSave.setPreferredSize(160, 60);
-		
+
 		buttonEditOffer.setText("Show Offer");
 		buttonEditOffer.setImage(UIImage.getImage("/com/sibvisions/apps/demoerp/images/export_database2.png"));
 		buttonEditOffer.eventAction().addListener(this, "doEditOffer");
@@ -557,7 +559,7 @@ public class OrderWorkScreen extends DataSourceWorkScreen implements IExpandable
 		buttonEditOffer.setFont(new UIFont("Arial", UIFont.BOLD, 13));
 		buttonEditOffer.setImageTextGap(2);
 		buttonEditOffer.setPreferredSize(160, 60);
-		
+
 		buttonGenerateReport.setText("Create Bill");
 		buttonGenerateReport.setImage(UIImage.getImage("/com/sibvisions/apps/demoerp/images/invoice.png"));
 		buttonGenerateReport.eventAction().addListener(this, "doGenerateBill");
@@ -576,15 +578,15 @@ public class OrderWorkScreen extends DataSourceWorkScreen implements IExpandable
 		groupPanelArticles.add(tableOfferarticle, formLayoutArticles.getConstraints(0, 0, -1, -1));
 
 		panelPrices.setLayout(formLayoutPrices);
-		
+
 		panelPrices.add(labelTotalprice, formLayoutPrices.getConstraints(-3, 0));
 		panelPrices.add(editOrder_Totalprice, formLayoutPrices.getConstraints(-2, 0));
 		panelPrices.add(labelCurrency2, formLayoutPrices.getConstraints(-1, 0));
-		
+
 		panelPrices.add(labelDiscountInPercent, formLayoutPrices.getConstraints(-3, 1));
 		panelPrices.add(editOrder_DiscountInPercent, formLayoutPrices.getConstraints(-2, 1));
 		panelPrices.add(labelPercentage2, formLayoutPrices.getConstraints(-1, 1));
-		
+
 		panelPrices.add(labelTaxInPercent, formLayoutPrices.getConstraints(-3, 2));
 		panelPrices.add(editOrder_TaxInPercent, formLayoutPrices.getConstraints(-2, 2));
 		panelPrices.add(labelPercentage1, formLayoutPrices.getConstraints(-1, 2));
@@ -706,13 +708,15 @@ public class OrderWorkScreen extends DataSourceWorkScreen implements IExpandable
 		buttonDownload.eventAction().addListener(this, "doDownloadOrderDocument");
 		buttonDownload.setImage(UIImage.getImage("/com/sibvisions/apps/demoerp/images/export_database2.png"));
 
-		borderLayout1.setMargins(new UIInsets(10, 10, 10, 10));
+		borderLayout1.setMargins(new UIInsets(0, 0, 0, 0));
 
 		formLayoutPrices.setAnchorConfiguration("l-2=-160");
 
 		formLayoutBillingInner.setAnchorConfiguration("r1=160");
 
-		formLayoutOrder.setAnchorConfiguration("r1=180,b7=205");
+		formLayoutOrder.setAnchorConfiguration("r1=180,t6=12,t7=12,b7=205");
+
+		formLayoutSearch.setMargins(new UIInsets(0, 0, 10, 0));
 
 		labelBillingdate.setText("Billing Nr");
 
@@ -790,11 +794,11 @@ public class OrderWorkScreen extends DataSourceWorkScreen implements IExpandable
 		setLayout(borderLayoutMain);
 		add(splitPanelMain, UIBorderLayout.CENTER);
 	}
-	
-	//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+	// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	// Interface implementation
-	//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
-	
+	// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 	/**
 	 * {@inheritDoc}
 	 */
@@ -809,11 +813,11 @@ public class OrderWorkScreen extends DataSourceWorkScreen implements IExpandable
 	public ExpandableViewState getViewState()
 	{
 		return evsCurrent;
-	}	
+	}
 
-	//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	// User-defined methods
-	//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 	/**
 	 * Opens the offer work screen for the selected order.

@@ -31,8 +31,7 @@ import com.sibvisions.util.type.CommonUtil;
 import com.sibvisions.apps.demoerp.Session;
 
 /**
- * The Users class is the life-cycle object for user management. @author Roland
- * Hörmann
+ * The Users class is the life-cycle object for user management. 
  */
 public class Users extends Session
 {
@@ -192,8 +191,6 @@ public class Users extends Session
 		if (!CommonUtil.equals(sOld, sNew))
 		{
 			bn.put("PASSWORD", AbstractSecurityManager.getEncryptedPassword(SessionContext.getCurrentSessionConfig(), sNew));
-
-			pEvent.setNew(bn);
 		}
 	}
 
@@ -216,8 +213,6 @@ public class Users extends Session
 		newRow.put("CREATED_ON", timestamp);
 		newRow.put("CHANGED_BY", sUser);
 		newRow.put("CHANGED_ON", timestamp);
-
-		pEvent.setNew(newRow);
 	}
 
 	/**
@@ -231,8 +226,6 @@ public class Users extends Session
 
 		newRow.put("CHANGED_BY", TriggerAPI.getCurrentUserName());
 		newRow.put("CHANGED_ON", TriggerAPI.getCurrentTimestamp());
-
-		pEvent.setNew(newRow);
 	}
 
 	/**
