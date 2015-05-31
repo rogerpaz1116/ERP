@@ -33,10 +33,10 @@
   <Application.Desktop.image.halign>Stretch</Application.Desktop.image.halign>
   <Application.InternalFrame.image>/com/sibvisions/apps/demoerp/images/frame.png</Application.InternalFrame.image>
   <Application.title>Enterprise Resource Planning</Application.title>
-  <Application.About.text>Demo ERP\n\nSIB Visions GmbH\nMeldemannstraße 18\nA-1200 Vienna</Application.About.text>
+  <Application.About.text>Demo ERP\n\nSIB Visions GmbH\nWehlistra&#223;e 29 / Stair 1 / 2nd Floor\nA-1200 Vienna</Application.About.text>
   <Application.WelcomeScreen/>
   <Application.version>1.0</Application.version>
   <Application.language>en</Application.language>
-  <Company.name>JVx :)</Company.name>
+  <Company.name>SIB Visions GmbH</Company.name>
   <Company.url>http://www.sibvisions.com/jvx</Company.url>
 </application>
