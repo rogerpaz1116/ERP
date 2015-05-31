@@ -13,6 +13,7 @@
  * License for the specific language governing permissions and limitations under
  * the License.
  */
+
 package com.sibvisions.apps.demoerp.screens;
 
 import java.math.BigDecimal;
@@ -47,30 +48,30 @@ import com.sibvisions.apps.components.NavigationTable;
 import com.sibvisions.apps.projx.ProjXUtil;
 import com.sibvisions.apps.projx.screens.DataSourceWorkScreen;
 import com.sibvisions.rad.model.remote.RemoteDataBook;
+import javax.rad.genui.UIInsets;
+import java.lang.String;
 
 /**
  * The ArticleWorkScreen shows the article categories in a tree and all articles
  * of this category in a table. It is possible to add, update or delete
  * articles.
  */
-public class ArticleWorkScreen extends DataSourceWorkScreen 
-                               implements INodeFormatter
+public class ArticleWorkScreen extends DataSourceWorkScreen implements INodeFormatter
 {
-	//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	// Class members
-	//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-	/** 
-	 * Folder Image. 
+	/**
+	 * Folder Image.
 	 */
 	private static final UIImage	FOLDER						= UIImage.getImage("/com/sibvisions/apps/demoerp/images/folder.png");
 
-	/** 
-	 * Open folder Image. 
+	/**
+	 * Open folder Image.
 	 */
 	private static final UIImage	FOLDER_OPEN					= UIImage.getImage("/com/sibvisions/apps/demoerp/images/folder_open.png");
 
-	
 	/**
 	 * treeArticleCategory.
 	 */
@@ -246,9 +247,9 @@ public class ArticleWorkScreen extends DataSourceWorkScreen
 	 */
 	private UIPanel					panelSearch					= new UIPanel();
 
-	//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	// Initialization
-	//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 	/**
 	 * Constructs a new instance of <code>ArticleWorkScreen</code>.
@@ -313,7 +314,7 @@ public class ArticleWorkScreen extends DataSourceWorkScreen
 	 */
 	private void initializeUI() throws Throwable
 	{
-		labelSearch.setText("Suchen");
+		labelSearch.setText("Search");
 
 		panelSearch.setLayout(formLayoutSearch);
 		panelSearch.add(labelSearch, formLayoutSearch.getConstraints(0, 0));
@@ -327,7 +328,7 @@ public class ArticleWorkScreen extends DataSourceWorkScreen
 		groupPanelArticleCategory.add(treeArticleCategory, formLayoutArticleCategory.getConstraints(0, 0, -1, -1));
 		treeArticleCategory.setNodeFormatter(this);
 
-		borderLayoutFirst.setMargins(10, 10, 10, 10);
+		borderLayoutFirst.setMargins(new UIInsets(5, 5, 5, 5));
 		splitPanelMainFirst.setLayout(borderLayoutFirst);
 		splitPanelMainFirst.add(groupPanelArticleCategory, UIBorderLayout.CENTER);
 
@@ -373,6 +374,11 @@ public class ArticleWorkScreen extends DataSourceWorkScreen
 		formLayoutArticleDetail.setAnchorConfiguration("r1=160");
 
 		formLayoutArticles.setAnchorConfiguration("t-1=-246");
+		formLayoutArticles.setMargins(new UIInsets(5, 5, 10, 5));
+
+		formLayoutSearch.setMargins(new UIInsets(0, 0, 10, 0));
+
+		formLayoutArticle.setAnchorConfiguration("b-2=-15");
 
 		tableArticle.setAutoResize(false);
 		tableArticle.setDataBook(rdbArticle);
@@ -411,9 +417,9 @@ public class ArticleWorkScreen extends DataSourceWorkScreen
 		add(splitPanelMain, UIBorderLayout.CENTER);
 	}
 
-	//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	// Interface implementation
-	//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 	/**
 	 * {@inheritDoc}
@@ -429,10 +435,10 @@ public class ArticleWorkScreen extends DataSourceWorkScreen
 			return FOLDER;
 		}
 	}
-	
-	//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+	// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	// User-defined methods
-	//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 	/**
 	 * Set values in rdbArticles after the insert.

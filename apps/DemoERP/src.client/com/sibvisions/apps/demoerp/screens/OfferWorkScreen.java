@@ -13,14 +13,17 @@
  * License for the specific language governing permissions and limitations under
  * the License.
  */
+
 package com.sibvisions.apps.demoerp.screens;
 
 import java.math.BigDecimal;
 import java.util.Date;
 
 import javax.rad.application.IWorkScreenApplication;
+import javax.rad.genui.UIColor;
 import javax.rad.genui.UIFont;
 import javax.rad.genui.UIImage;
+import javax.rad.genui.UIInsets;
 import javax.rad.genui.component.UIButton;
 import javax.rad.genui.component.UILabel;
 import javax.rad.genui.container.UIGroupPanel;
@@ -47,9 +50,9 @@ import com.sibvisions.util.type.CommonUtil;
  */
 public class OfferWorkScreen extends DataSourceWorkScreen
 {
-	//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	// Class members
-	//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 	/**
 	 * labelOfferNr.
@@ -255,15 +258,15 @@ public class OfferWorkScreen extends DataSourceWorkScreen
 	 * Its a customer remote databook.
 	 */
 	private RemoteDataBook				rdbCustomer					= new RemoteDataBook();
-	
+
 	/**
 	 * The current offer id.
 	 */
 	private BigDecimal					bdOldId						= null;
-	
-	//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+	// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	// Initialization
-	//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 	/**
 	 * Constructs a new instance of <code>OfferWorkScreen</code>.
@@ -335,6 +338,15 @@ public class OfferWorkScreen extends DataSourceWorkScreen
 	{
 		tabsetPanelSelectArticles = new SelectArticlesTabsetPanel(getDataSource(), rdbOffer);
 		tabsetPanelSelectArticles.setPreferredSize(500, 320);
+		tabsetPanelSelectArticles.setTranslationEnabled(true);
+		tabsetPanelSelectArticles.setTabPlacement(1);
+		tabsetPanelSelectArticles.setTabLayoutPolicy(0);
+		tabsetPanelSelectArticles.setNavigationKeysEnabled(false);
+		tabsetPanelSelectArticles.setForeground(new UIColor(0x0));
+		tabsetPanelSelectArticles.setFont(new UIFont("Tahoma", UIFont.PLAIN, 11));
+		tabsetPanelSelectArticles.setFocusable(true);
+		tabsetPanelSelectArticles.setEnabled(true);
+		tabsetPanelSelectArticles.setDragable(false);
 
 		labelCreationdate.setText("Offer date");
 
@@ -396,7 +408,7 @@ public class OfferWorkScreen extends DataSourceWorkScreen
 
 		editOfferCustomerCustomerNr.setDataRow(rdbOffer);
 		editOfferCustomerCustomerNr.setColumnName("CUSTOMER_NR");
-		
+
 		buttonSave.setText("Save");
 		buttonSave.setImage(UIImage.getImage("/com/sibvisions/apps/demoerp/images/diskette.png"));
 		buttonSave.eventAction().addListener(this, "doSave");
@@ -407,7 +419,7 @@ public class OfferWorkScreen extends DataSourceWorkScreen
 		buttonSave.setFont(new UIFont("Arial", UIFont.BOLD, 13));
 		buttonSave.setImageTextGap(2);
 		buttonSave.setPreferredSize(160, 60);
-		
+
 		buttonGenerateDocument.setText("Download Offer");
 		buttonGenerateDocument.setImage(UIImage.getImage("/com/sibvisions/apps/demoerp/images/export_database2.png"));
 		buttonGenerateDocument.eventAction().addListener(this, "doGenerateOfferReport");
@@ -418,7 +430,7 @@ public class OfferWorkScreen extends DataSourceWorkScreen
 		buttonGenerateDocument.setFont(new UIFont("Arial", UIFont.BOLD, 13));
 		buttonGenerateDocument.setImageTextGap(2);
 		buttonGenerateDocument.setPreferredSize(160, 60);
-		
+
 		buttonOrder.setText("Generate Order");
 		buttonOrder.setImage(UIImage.getImage("/com/sibvisions/apps/demoerp/images/paypal.png"));
 		buttonOrder.eventAction().addListener(this, "doOrder");
@@ -442,7 +454,9 @@ public class OfferWorkScreen extends DataSourceWorkScreen
 
 		formLayoutPrices.setAnchorConfiguration("l-2=-160");
 
-		formLayoutOffer.setAnchorConfiguration("r1=160");
+		formLayoutOffer.setAnchorConfiguration("r1=160,l2=12,l4=12,t3=13,b3=318");
+
+		borderLayoutOffer.setMargins(new UIInsets(5, 5, 5, 5));
 
 		panelPrices.setLayout(formLayoutPrices);
 		panelPrices.add(labelTotalprice, formLayoutPrices.getConstraints(-3, 0));
@@ -452,7 +466,7 @@ public class OfferWorkScreen extends DataSourceWorkScreen
 		panelPrices.add(labelDiscountInPercent, formLayoutPrices.getConstraints(-3, 1));
 		panelPrices.add(editOfferDiscountInPercent, formLayoutPrices.getConstraints(-2, 1));
 		panelPrices.add(labelPercent2, formLayoutPrices.getConstraints(-1, 1));
-		
+
 		panelPrices.add(labelTaxInPercent, formLayoutPrices.getConstraints(-3, 2));
 		panelPrices.add(editOfferTaxInPercent, formLayoutPrices.getConstraints(-2, 2));
 		panelPrices.add(labelPercent1, formLayoutPrices.getConstraints(-1, 2));
@@ -468,18 +482,18 @@ public class OfferWorkScreen extends DataSourceWorkScreen
 		groupPanelOffer.setLayout(formLayoutOffer);
 		groupPanelOffer.add(labelOfferNr, formLayoutOffer.getConstraints(0, 0));
 		groupPanelOffer.add(editOfferOfferNr, formLayoutOffer.getConstraints(1, 0));
+		groupPanelOffer.add(labelCreationdate, formLayoutOffer.getConstraints(2, 0));
+		groupPanelOffer.add(editOfferCreationdate, formLayoutOffer.getConstraints(3, 0));
+		groupPanelOffer.add(labelFixprice, formLayoutOffer.getConstraints(4, 0));
+		groupPanelOffer.add(editOfferFixprice, formLayoutOffer.getConstraints(5, 0));
 		groupPanelOffer.add(labelTitle, formLayoutOffer.getConstraints(0, 1));
 		groupPanelOffer.add(editOfferTitle, formLayoutOffer.getConstraints(1, 1, -1, 1));
 		groupPanelOffer.add(labelCustomerNr, formLayoutOffer.getConstraints(0, 2));
 		groupPanelOffer.add(editOfferCustomerCustomerNr, formLayoutOffer.getConstraints(1, 2));
-		groupPanelOffer.add(labelCreationdate, formLayoutOffer.getConstraints(0, 3));
-		groupPanelOffer.add(editOfferCreationdate, formLayoutOffer.getConstraints(1, 3));
-		groupPanelOffer.add(labelValiduntil, formLayoutOffer.getConstraints(0, 4));
-		groupPanelOffer.add(editOfferValiduntil, formLayoutOffer.getConstraints(1, 4));
-		groupPanelOffer.add(labelFixprice, formLayoutOffer.getConstraints(0, 5));
-		groupPanelOffer.add(editOfferFixprice, formLayoutOffer.getConstraints(1, 5));
-		groupPanelOffer.add(tabsetPanelSelectArticles, formLayoutOffer.getConstraints(0, 6, -1, 6));
-		groupPanelOffer.add(panelPrices, formLayoutOffer.getConstraints(0, 7, -1, 7));
+		groupPanelOffer.add(labelValiduntil, formLayoutOffer.getConstraints(2, 2));
+		groupPanelOffer.add(editOfferValiduntil, formLayoutOffer.getConstraints(3, 2));
+		groupPanelOffer.add(tabsetPanelSelectArticles, formLayoutOffer.getConstraints(0, 3, -1, 3));
+		groupPanelOffer.add(panelPrices, formLayoutOffer.getConstraints(0, 4, -1, 4));
 
 		panelMain.setLayout(borderLayoutOffer);
 		panelMain.add(groupPanelOffer, UIBorderLayout.CENTER);
@@ -491,9 +505,9 @@ public class OfferWorkScreen extends DataSourceWorkScreen
 		doConfigureButtonsAndEditors();
 	}
 
-	//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	// Overwritten methods
-	//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 	/**
 	 * {@inheritDoc}
@@ -501,13 +515,13 @@ public class OfferWorkScreen extends DataSourceWorkScreen
 	public void onLoad() throws Throwable
 	{
 		super.onLoad();
-		
+
 		filterOffer();
 	}
-	
+
 	/**
 	 * {@inheritDoc}
-	 */	
+	 */
 	public void onActivate() throws Throwable
 	{
 		if (getParameter("ID") != null)
@@ -515,10 +529,10 @@ public class OfferWorkScreen extends DataSourceWorkScreen
 			filterOffer();
 		}
 	}
-	
-	//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+	// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	// User-defined methods
-	//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 	/**
 	 * Filters the offer.
@@ -528,21 +542,21 @@ public class OfferWorkScreen extends DataSourceWorkScreen
 	private void filterOffer() throws Throwable
 	{
 		BigDecimal bdId = (BigDecimal)getParameter("ID");
-		
+
 		if (!CommonUtil.equals(bdId, bdOldId))
 		{
 			rdbOffer.setFilter(new Equals("ID", bdId));
-	
+
 			rdbCustomer.setFilter(new Equals("ID", rdbOffer.getValue("CUSTOMER_ID")));
-			
+
 			tabsetPanelSelectArticles.setOffer(bdId);
-			
+
 			setParameter("ID", null);
-			
+
 			bdOldId = bdId;
 		}
 	}
-	
+
 	/**
 	 * Creates a offer number from the generated id.
 	 * 

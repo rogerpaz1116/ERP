@@ -13,6 +13,7 @@
  * License for the specific language governing permissions and limitations under
  * the License.
  */
+
 package com.sibvisions.apps.demoerp.screens;
 
 import javax.rad.application.IWorkScreenApplication;
@@ -37,154 +38,155 @@ import com.sibvisions.apps.components.NavigationTable;
 import com.sibvisions.apps.projx.screens.DataSourceWorkScreen;
 import com.sibvisions.apps.vaadin.web.IExpandableView;
 import com.sibvisions.rad.model.remote.RemoteDataBook;
+import javax.rad.genui.UIInsets;
 
 /**
  * Shows a statistic with different chart types.
  */
 public class StatisticWorkScreen extends DataSourceWorkScreen implements IExpandableView
 {
-	//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	// Class members
-	//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-	
+	// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 	/**
 	 * labelSelectedYear.
 	 */
-	private UILabel			labelSelectedYear					= new UILabel();
+	private UILabel				labelSelectedYear					= new UILabel();
 
 	/**
 	 * formLayoutSelectedYear.
 	 */
-	private UIFormLayout	formLayoutSelectedYear				= new UIFormLayout();
+	private UIFormLayout		formLayoutSelectedYear				= new UIFormLayout();
 
 	/**
 	 * navigationTableYear.
 	 */
-	private NavigationTable	navigationTableYear					= new NavigationTable();
+	private NavigationTable		navigationTableYear					= new NavigationTable();
 
 	/**
 	 * navigationTableMonth.
 	 */
-	private NavigationTable	navigationTableMonth				= new NavigationTable();
+	private NavigationTable		navigationTableMonth				= new NavigationTable();
 
 	/**
 	 * Its a v_statistic_order_offer_year remote databook.
 	 */
-	private RemoteDataBook	rdbV_statistic_order_offer_year		= new RemoteDataBook();
+	private RemoteDataBook		rdbV_statistic_order_offer_year		= new RemoteDataBook();
 
 	/**
 	 * Its a v_statistic_order_offer_month remote databook.
 	 */
-	private RemoteDataBook	rdbV_statistic_order_offer_month	= new RemoteDataBook();
+	private RemoteDataBook		rdbV_statistic_order_offer_month	= new RemoteDataBook();
 
 	/**
 	 * splitPanel1.
 	 */
-	private UISplitPanel	splitPanel1							= new UISplitPanel();
+	private UISplitPanel		splitPanel1							= new UISplitPanel();
 
 	/**
 	 * splitPanel2.
 	 */
-	private UISplitPanel	splitPanel2							= new UISplitPanel();
+	private UISplitPanel		splitPanel2							= new UISplitPanel();
 
 	/**
 	 * panel1.
 	 */
-	private UIPanel			panel1								= new UIPanel();
+	private UIPanel				panel1								= new UIPanel();
 
 	/**
 	 * splitPanel1First.
 	 */
-	private UIPanel			splitPanel1First					= new UIPanel();
+	private UIPanel				splitPanel1First					= new UIPanel();
 
 	/**
 	 * panel2.
 	 */
-	private UIPanel			panel2								= new UIPanel();
+	private UIPanel				panel2								= new UIPanel();
 
 	/**
 	 * splitPanel2First.
 	 */
-	private UIPanel			splitPanel2First					= new UIPanel();
+	private UIPanel				splitPanel2First					= new UIPanel();
 
 	/**
 	 * splitPanel2Second.
 	 */
-	private UIPanel			splitPanel2Second					= new UIPanel();
+	private UIPanel				splitPanel2Second					= new UIPanel();
 
 	/**
 	 * panelSelectedYear.
 	 */
-	private UIPanel			panelSelectedYear					= new UIPanel();
+	private UIPanel				panelSelectedYear					= new UIPanel();
 
 	/**
 	 * panelChartStyle.
 	 */
-	private UIPanel			panelChartStyle						= new UIPanel();
+	private UIPanel				panelChartStyle						= new UIPanel();
 
 	/**
 	 * panelAreaLineChart.
 	 */
-	private UIPanel			panelAreaLineChart					= new UIPanel();
+	private UIPanel				panelAreaLineChart					= new UIPanel();
 
 	/**
 	 * tabsetPanelMain.
 	 */
-	private UITabsetPanel	tabsetPanelMain						= new UITabsetPanel();
+	private UITabsetPanel		tabsetPanelMain						= new UITabsetPanel();
 
 	/**
 	 * borderLayoutAreaLineChart.
 	 */
-	private UIBorderLayout	borderLayoutAreaLineChart			= new UIBorderLayout();
+	private UIBorderLayout		borderLayoutAreaLineChart			= new UIBorderLayout();
 
 	/**
 	 * borderLayoutMain.
 	 */
-	private UIBorderLayout	borderLayoutMain					= new UIBorderLayout();
+	private UIBorderLayout		borderLayoutMain					= new UIBorderLayout();
 
 	/**
 	 * borderLayout2.
 	 */
-	private UIBorderLayout	borderLayout2						= new UIBorderLayout();
+	private UIBorderLayout		borderLayout2						= new UIBorderLayout();
 
 	/**
 	 * borderLayout1.
 	 */
-	private UIBorderLayout	borderLayout1						= new UIBorderLayout();
+	private UIBorderLayout		borderLayout1						= new UIBorderLayout();
 
 	/**
 	 * borderLayoutYearTable.
 	 */
-	private UIBorderLayout	borderLayoutYearTable				= new UIBorderLayout();
+	private UIBorderLayout		borderLayoutYearTable				= new UIBorderLayout();
 
 	/**
 	 * borderLayoutMonthTable.
 	 */
-	private UIBorderLayout	borderLayoutMonthTable				= new UIBorderLayout();
+	private UIBorderLayout		borderLayoutMonthTable				= new UIBorderLayout();
 
-	/** 
-	 * Switch between chart styles lines and area. 
+	/**
+	 * Switch between chart styles lines and area.
 	 */
-	private UIRadioButton[]	rbaChartStyles						= new UIRadioButton[] { new UIRadioButton("Lines"), new UIRadioButton("Areas") };
+	private UIRadioButton[]		rbaChartStyles						= new UIRadioButton[] { new UIRadioButton("Lines"), new UIRadioButton("Areas") };
 
-	/** 
-	 * The line and area chart. 
+	/**
+	 * The line and area chart.
 	 */
-	private UIChart			chartLineArea						= new UIChart();
+	private UIChart				chartLineArea						= new UIChart();
 
-	/** 
-	 * The bar chart. 
+	/**
+	 * The bar chart.
 	 */
-	private UIChart			chartBar							= new UIChart();
-	
-	/** 
-	 * The current view state. 
+	private UIChart				chartBar							= new UIChart();
+
+	/**
+	 * The current view state.
 	 */
-	private ExpandableViewState evsCurrent 						= ExpandableViewState.Default;
-	
-	//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	private ExpandableViewState	evsCurrent							= ExpandableViewState.Default;
+
+	// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	// Initialization
-	//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 	/**
 	 * Constructs a new instance of <code>StatisticWorkScreen</code>.
@@ -199,7 +201,7 @@ public class StatisticWorkScreen extends DataSourceWorkScreen implements IExpand
 
 		initializeModel();
 		initializeUI();
-		
+
 		doChangeYear();
 	}
 
@@ -223,12 +225,12 @@ public class StatisticWorkScreen extends DataSourceWorkScreen implements IExpand
 
 		rdbV_statistic_order_offer_month.getRowDefinition().getColumnView(ITableControl.class)
 				.setColumnNames(new String[] { "MONTH", "OFFER_GROSSTOTALPRICE", "ORDER_GROSSTOTALPRICE" });
-		
+
 		rdbV_statistic_order_offer_year.eventAfterRowSelected().addListener(this, "doChangeYear");
-		
+
 		rdbV_statistic_order_offer_month.getRowDefinition().getColumnDefinition("OFFER_GROSSTOTALPRICE").setLabel("Total offers");
 		rdbV_statistic_order_offer_month.getRowDefinition().getColumnDefinition("ORDER_GROSSTOTALPRICE").setLabel("Total orders");
-		
+
 		rdbV_statistic_order_offer_year.getRowDefinition().getColumnDefinition("OFFER_GROSSTOTALPRICE").setLabel("Total offers");
 		rdbV_statistic_order_offer_year.getRowDefinition().getColumnDefinition("ORDER_GROSSTOTALPRICE").setLabel("Total orders");
 	}
@@ -302,6 +304,8 @@ public class StatisticWorkScreen extends DataSourceWorkScreen implements IExpand
 		splitPanel2First.setLayout(borderLayoutMonthTable);
 		borderLayoutMonthTable.setMargins(0, 10, 10, 10);
 
+		borderLayoutMain.setMargins(new UIInsets(5, 5, 5, 5));
+
 		labelSelectedYear.setFont(new UIFont("", UIFont.BOLD, 14));
 		labelSelectedYear.setForeground(new UIColor(68, 105, 139));
 		labelSelectedYear.setText("");
@@ -326,11 +330,11 @@ public class StatisticWorkScreen extends DataSourceWorkScreen implements IExpand
 		setLayout(borderLayoutMain);
 		add(tabsetPanelMain, UIBorderLayout.CENTER);
 	}
-	
-	//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+	// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	// Interface implementation
-	//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
-	
+	// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 	/**
 	 * {@inheritDoc}
 	 */
@@ -356,11 +360,11 @@ public class StatisticWorkScreen extends DataSourceWorkScreen implements IExpand
 	public ExpandableViewState getViewState()
 	{
 		return evsCurrent;
-	}	
-	
-	//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	}
+
+	// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	// User-defined methods
-	//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 	/**
 	 * Switches the chart style.
@@ -387,7 +391,7 @@ public class StatisticWorkScreen extends DataSourceWorkScreen implements IExpand
 			rbaChartStyles[1].setSelected(true);
 		}
 	}
-	
+
 	/**
 	 * Changes the selected year.
 	 * 
@@ -396,7 +400,7 @@ public class StatisticWorkScreen extends DataSourceWorkScreen implements IExpand
 	public void doChangeYear() throws Throwable
 	{
 		labelSelectedYear.setText(rdbV_statistic_order_offer_year.getValueAsString("YEAR_"));
-		chartLineArea.setTitle("Monthly Statistic for year "+rdbV_statistic_order_offer_year.getValueAsString("YEAR_"));
+		chartLineArea.setTitle("Monthly Statistic for year " + rdbV_statistic_order_offer_year.getValueAsString("YEAR_"));
 	}
 
 } // StatisticWorkScreen

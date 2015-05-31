@@ -13,6 +13,7 @@
  * License for the specific language governing permissions and limitations under
  * the License.
  */
+
 package com.sibvisions.apps.demoerp.screens;
 
 import java.math.BigDecimal;
@@ -348,7 +349,7 @@ public class MobileCustomerWorkScreen extends DataSourceWorkScreen
 
 		formLayoutCustomer.setAnchorConfiguration("t10=30");
 
-		labelSuchen.setText("Suchen");
+		labelSuchen.setText("Search");
 
 		groupPanelCustomer.setText("Customers");
 		groupPanelCustomer.setLayout(borderLayoutCustomer);

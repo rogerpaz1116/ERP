@@ -13,6 +13,7 @@
  * License for the specific language governing permissions and limitations under
  * the License.
  */
+
 package com.sibvisions.apps.demoerp.screens;
 
 import java.math.BigDecimal;
@@ -38,6 +39,7 @@ import com.sibvisions.apps.components.NavigationTable;
 import com.sibvisions.apps.projx.ProjXUtil;
 import com.sibvisions.apps.projx.screens.DataSourceWorkScreen;
 import com.sibvisions.rad.model.remote.RemoteDataBook;
+import javax.rad.genui.UIInsets;
 
 /**
  * The CustomersWorkScreen shows all customers in a list. It is possible to
@@ -45,9 +47,9 @@ import com.sibvisions.rad.model.remote.RemoteDataBook;
  */
 public class CustomersWorkScreen extends DataSourceWorkScreen
 {
-	//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	// Class members
-	//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 	/**
 	 * editCustomerCustomerNr.
@@ -274,9 +276,9 @@ public class CustomersWorkScreen extends DataSourceWorkScreen
 	 */
 	private UIBorderLayout	borderLayoutSecond			= new UIBorderLayout();
 
-	//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	// Initialization
-	//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 	/**
 	 * Constructs a new instance of <code>CustomersWorkScreen</code>.
@@ -339,9 +341,9 @@ public class CustomersWorkScreen extends DataSourceWorkScreen
 		buttonNewOffer.setFont(new UIFont("Arial", UIFont.BOLD, 12));
 		buttonNewOffer.setImageTextGap(2);
 		buttonNewOffer.setPreferredSize(160, 60);
-				
+
 		buttonShowOffers.setText("Show Offers");
-		buttonShowOffers.setImage( UIImage.getImage("/com/sibvisions/apps/demoerp/images/invoice.png"));
+		buttonShowOffers.setImage(UIImage.getImage("/com/sibvisions/apps/demoerp/images/invoice.png"));
 		buttonShowOffers.eventAction().addListener(this, "doShowOffers");
 		buttonShowOffers.setHorizontalTextPosition(IAlignmentConstants.ALIGN_CENTER);
 		buttonShowOffers.setVerticalTextPosition(IAlignmentConstants.ALIGN_BOTTOM);
@@ -350,7 +352,7 @@ public class CustomersWorkScreen extends DataSourceWorkScreen
 		buttonShowOffers.setFont(new UIFont("Arial", UIFont.BOLD, 12));
 		buttonShowOffers.setImageTextGap(2);
 		buttonShowOffers.setPreferredSize(160, 60);
-		
+
 		buttonShowOrders.setText("Show Orders");
 		buttonShowOrders.setImage(UIImage.getImage("/com/sibvisions/apps/demoerp/images/paypal.png"));
 		buttonShowOrders.eventAction().addListener(this, "doShowOrders");
@@ -393,7 +395,7 @@ public class CustomersWorkScreen extends DataSourceWorkScreen
 
 		filterEditor.setDataRow(rdbCustomer);
 
-		borderLayoutFirst.setMargins(10, 10, 10, 10);
+		borderLayoutFirst.setMargins(new UIInsets(5, 5, 5, 5));
 		splitPanelMainFirst.setLayout(borderLayoutFirst);
 		splitPanelMainFirst.add(groupPanelCustomer, UIBorderLayout.CENTER);
 
@@ -403,6 +405,8 @@ public class CustomersWorkScreen extends DataSourceWorkScreen
 		panelActions.add(buttonShowOrders, formLayoutActions.getConstraints(-1, 0));
 
 		formLayoutCustomerDetail.setAnchorConfiguration("t10=30");
+
+		formLayoutCustomer.setMargins(new UIInsets(10, 5, 10, 4));
 
 		editCustomerCustomerNr.setDataRow(rdbCustomer);
 		editCustomerCustomerNr.setColumnName("CUSTOMER_NR");
@@ -477,9 +481,9 @@ public class CustomersWorkScreen extends DataSourceWorkScreen
 		add(splitPanelMain, UIBorderLayout.CENTER);
 	}
 
-	//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	// User-defined methods
-	//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 	/**
 	 * Creates the customer nr.

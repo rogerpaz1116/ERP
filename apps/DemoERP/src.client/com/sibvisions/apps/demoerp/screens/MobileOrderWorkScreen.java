@@ -43,7 +43,7 @@ import com.sibvisions.apps.util.Var;
 import com.sibvisions.rad.model.remote.RemoteDataBook;
 
 /**
- * Der MobileOrderWorkScreen verwaltet...
+ * The MobileOrderWorkScreen shows all orders and the screen was optimized for mobile devices.
  */
 public class MobileOrderWorkScreen extends DataSourceWorkScreen
 {
@@ -530,7 +530,7 @@ public class MobileOrderWorkScreen extends DataSourceWorkScreen
 		splitPanelMainFirst.add(tableOrder_, UIBorderLayout.CENTER);
 
 		borderLayoutRightInner.setMargins(10, 10, 10, 10);
-		panelRightInner = new UIPanel(borderLayoutRightInner);
+		panelRightInner.setLayout(borderLayoutRightInner);
 		panelRightInner.add(tabsetPanel, UIBorderLayout.CENTER);
 
 		splitPanelMainSecond.setLayout(borderLayoutRight);
