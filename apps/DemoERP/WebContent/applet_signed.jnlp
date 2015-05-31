@@ -10,8 +10,11 @@
   <resources>
     <j2se version="1.5+" java-vm-args="-Xmx256M"/>
     <!-- first library should contain the main class -->
-    <jar href="DemoERP_all.jar" main="true"/>
+    <jar href="DemoERP_all_signed.jar" main="true"/>
   </resources>
+  <security>
+    <all-permissions/>
+  </security>
   <applet-desc documentbase="http://localhost/Demoerp/" name="DemoERP" main-class="com.sibvisions.rad.ui.swing.impl.SwingApplet" width="1024" height="768">
     <param name="main" value="com.sibvisions.apps.projx.ProjX"/>
     <param name="config" value="/com/sibvisions/apps/demoerp/application.xml"/>

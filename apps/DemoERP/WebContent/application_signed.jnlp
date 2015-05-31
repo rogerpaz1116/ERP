@@ -9,8 +9,11 @@
   </information>
   <resources>
     <j2se version="1.5+"/>
-    <jar href="DemoERP_all.jar" main="true"/>
+    <jar href="DemoERP_all_signed.jar" main="true"/>
   </resources>
+  <security>
+    <all-permissions/>
+  </security>
   <application-desc main-class="com.sibvisions.rad.ui.swing.impl.SwingApplication">
     <argument>&quot;com.sibvisions.apps.projx.ProjX&quot;</argument>
     <argument>&quot;/com/sibvisions/apps/demoerp/application.xml&quot;</argument>

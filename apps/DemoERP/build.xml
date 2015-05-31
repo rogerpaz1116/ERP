@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<project name="Demoerp" default="start.complete">
+<project name="DemoERP" default="start.complete">
   
   <!--
   *****************************************************************
@@ -8,7 +8,7 @@
   *****************************************************************
   -->
   
-  <description>DemoERP</description>
+  <description>Demo ERP</description>
   
   <!--
   *****************************************************************
@@ -16,7 +16,7 @@
   *****************************************************************
   -->
   
-  <property name="company.name" value="VisionX"/>
+  <property name="company.name" value="SIB Visions GmbH"/>
   
   <property name="company.url" value="http://visionx.sibvisions.com"/>
   
@@ -28,23 +28,19 @@
   
   <property name="app.version" value="1.0"/>
   
+  <property name="app.sign" value="false"/>
+  
+  <property name="app.config.encrypt" value="false"/>
+  
   <property name="jar.name.client" value="${app.name}.jar"/>
   
   <property name="jar.name.client.all" value="${app.name}_all.jar"/>
-  
-  <property name="jar.name.client.signed" value="${app.name}_signed.jar"/>
   
   <property name="jar.name.client.all.signed" value="${app.name}_all_signed.jar"/>
   
   <property name="jar.name.server" value="${app.name}server.jar"/>
   
   <property name="war.name" value="${app.title}.war"/>
-  
-  <property name="sign.alias" value=""/>
-  
-  <property name="sign.keystore" value=""/>
-  
-  <property name="sign.storepass" value=""/>
   
   <!--
   *****************************************************************
@@ -133,6 +129,14 @@
   
   <taskdef name="buildnr" classname="com.sibvisions.addons.ant.AntBuildNumber" classpath="${buildnumber}/addons.jar"/>
   
+  <!-- secure signing -->
+  
+  <taskdef name="securesign" classname="com.sibvisions.addons.ant.SecureSign" classpath="${buildnumber}/addons.jar;${libs}/server/jvx.jar"/>
+  
+  <!-- config encryption -->
+  
+  <taskdef name="configencrypt" classname="com.sibvisions.addons.ant.XmlEncryptionTask" classpath="${buildnumber}/addons.jar;${libs}/server/jvx.jar"/>
+  
   <!-- if(ant) support -->
   
   <taskdef resource="net/sf/antcontrib/antcontrib.properties" classpath="${ant}/ant-contrib-1.0b3.jar"/>
@@ -142,6 +146,8 @@
   * logging
   *****************************************************************
   -->
+  
+  <mkdir dir="${build}"/>
   
   <record name="${build}/build.log"/>
   
@@ -169,13 +175,16 @@
     <delete dir="${classes.server}"/>
     <mkdir dir="${classes.client}"/>
     <mkdir dir="${classes.server}"/>
-    <!-- compile the client sources -->
+    <!-- compile client sources -->
     <javac srcdir="${src.client}" destdir="${classes.client}" debug="off" deprecation="on" source="1.5" target="1.5" encoding="ISO-8859-1">
       <classpath>
         <fileset dir="${libs}">
           <include name="*.jar"/>
         </fileset>
         <fileset dir="${libs}/client">
+          <include name="*.jar"/>
+        </fileset>
+        <fileset dir="${libs}/client/ext" erroronmissingdir="false">
           <include name="*.jar"/>
         </fileset>
       </classpath>
@@ -189,21 +198,27 @@
       </fileset>
     </copy>
     <!-- replace debugs -->
+    <!--
     <replace dir="${classes.client}" value="_Application.Login.username">
-      <include name="**/application.xml"/>
-      <replacetoken>Application.Login.username</replacetoken>
+    <include name="**/application.xml" />
+    <replacetoken>Application.Login.username</replacetoken>
     </replace>
+    
     <replace dir="${classes.client}" value="_Application.Login.password">
-      <include name="**/application.xml"/>
-      <replacetoken>Application.Login.password</replacetoken>
+    <include name="**/application.xml" />
+    <replacetoken>Application.Login.password</replacetoken>
     </replace>
-    <!-- compile the server sources -->
+    -->
+    <!-- compile server sources -->
     <javac srcdir="${src.server}" destdir="${classes.server}" debug="off" deprecation="on" source="1.5" target="1.5" encoding="ISO-8859-1">
       <classpath>
         <fileset dir="${libs}">
           <include name="*.jar"/>
         </fileset>
         <fileset dir="${libs}/server">
+          <include name="*.jar"/>
+        </fileset>
+        <fileset dir="${libs}/server/ext" erroronmissingdir="false">
           <include name="*.jar"/>
         </fileset>
       </classpath>
@@ -241,12 +256,11 @@
   </target>
   
   <target name="jarall" depends="jar">
-    <!-- all jars together -->
-    <buildnr buildfile="${buildnumber}/buildnr.properties" loadonly="true"/>
-
+    <!-- all jars together (this step is also needed for signed mode) -->
     <jar destfile="${install}/${jar.name.client.all}">
       <zipgroupfileset dir="${libs}" includes="*.jar"/>
       <zipgroupfileset dir="${libs}/client" includes="*.jar"/>
+      <zipgroupfileset dir="${libs}/client/ext" includes="*.jar" erroronmissingdir="false"/>
       <zipgroupfileset dir="${install}" includes="${jar.name.client}"/>
       <manifest>
         <attribute name="Implementation-Title" value="${build.versionstring}"/>
@@ -257,36 +271,28 @@
         <attribute name="Application-Name" value="${app.title_original}"/>
       </manifest>
     </jar>
-
-    <jar destfile="${install}/${jar.name.client.all.signed}">
-      <zipgroupfileset dir="${libs}" includes="*.jar"/>
-      <zipgroupfileset dir="${libs}/client" includes="*.jar"/>
-      <zipgroupfileset dir="${install}" includes="${jar.name.client}"/>
-      <manifest>
-        <attribute name="Implementation-Title" value="${build.versionstring}"/>
-        <attribute name="Implementation-Version" value="b${build.number} ${build.date}"/>
-        <attribute name="Implementation-Vendor" value="${company.name}"/>
-        <attribute name="Codebase" value="*"/>
-        <attribute name="Permissions" value="all-permissions"/>
-        <attribute name="Application-Name" value="${app.title_original}"/>
-      </manifest>
-    </jar>
-    
-    <copy file="${install}/${jar.name.client}" tofile="${install}/${jar.name.client.signed}"/>
-
     <if>
-      <and>
-        <isset property="sign.alias"/>
-        <isset property="sign.keystore"/>
-        <length string="${sign.alias}" when="greater" length="0"/>
-        <length string="${sign.keystore}" when="greater" length="0"/>
-      </and>
+      <istrue value="${app.sign}"/>
       <then>
-        <signjar alias="${sign.alias}" keystore="${sign.keystore}" storepass="${sign.storepass}">
-          <path>
-            <fileset dir="${install}" includes="${jar.name.client.signed}, ${jar.name.client.all.signed}"/>
-          </path>
-        </signjar>
+        <jar destfile="${install}/${jar.name.client.all.signed}">
+          <zipgroupfileset dir="${libs}" includes="*.jar"/>
+          <zipgroupfileset dir="${libs}/client" includes="*.jar"/>
+          <zipgroupfileset dir="${libs}/client/ext" includes="*.jar" erroronmissingdir="false"/>
+          <zipgroupfileset dir="${install}" includes="${jar.name.client}"/>
+          <manifest>
+            <attribute name="Implementation-Title" value="${build.versionstring}"/>
+            <attribute name="Implementation-Version" value="b${build.number} ${build.date}"/>
+            <attribute name="Implementation-Vendor" value="${company.name}"/>
+            <attribute name="Codebase" value="*"/>
+            <attribute name="Permissions" value="all-permissions"/>
+            <attribute name="Application-Name" value="${app.title_original}"/>
+          </manifest>
+        </jar>
+        <securesign sign="${app.sign}" updateManifest="false" keystoreXml="${ant}/keystore/keystore.xml">
+          <fileset dir="${install}">
+            <include name="${jar.name.client.all.signed}"/>
+          </fileset>
+        </securesign>
       </then>
     </if>
   </target>
@@ -296,6 +302,31 @@
     <delete dir="${webapp}"/>
     <mkdir dir="${webapp}/server"/>
     <mkdir dir="${webapp}/app"/>
+    <mkdir dir="${webapp}/public"/>
+    <!-- signed or unsinged (use right files) -->
+    <if>
+      <istrue value="${app.sign}"/>
+      <then>
+        <copy todir="${webapp}/public">
+          <fileset dir="${webcontent}">
+            <include name="index_signed.html"/>
+            <include name="applet_signed.jnlp"/>
+            <include name="application_signed.jnlp"/>
+          </fileset>
+          <regexpmapper from="(.*)\_signed\.(.*)" to="\1.\2"/>
+        </copy>
+        <replace file="${webapp}/public/index.html" value="applet.jnlp" token="applet_signed.jnlp"/>
+      </then>
+      <else>
+        <copy todir="${webapp}/public">
+          <fileset dir="${webcontent}">
+            <include name="index.html"/>
+            <include name="applet.jnlp"/>
+            <include name="application.jnlp"/>
+          </fileset>
+        </copy>
+      </else>
+    </if>
     <!-- set server-options -->
     <if>
       <available file="${webcontent}/WEB-INF/rad/apps/${app.name}/config.xml" type="file"/>
@@ -305,6 +336,16 @@
       <else>
         <copy file="${basedir}/config.xml" tofile="${webapp}/app/config.xml"/>
       </else>
+    </if>
+    <if>
+      <isset property="app.config.encrypt"/>
+      <then>
+        <configencrypt file="${webapp}/app/config.xml">
+          <node name="/application/securitymanager"/>
+          <node name="/application/lifecycle"/>
+          <node name="/application/datasource"/>
+        </configencrypt>
+      </then>
     </if>
     <if>
       <available file="${webcontent}/WEB-INF/rad/apps/${app.name}/mobile.xml" type="file"/>
@@ -319,24 +360,15 @@
     <replace file="${webapp}/app/config.xml" value="&lt;property name=&quot;client.metadata_cacherole&quot;&gt;GLOBAL&lt;/property&gt;" token="&lt;property name=&quot;client.metadata_cacherole&quot;&gt;OFF&lt;/property&gt;"/>
     <replace file="${webapp}/server/config.xml" value="&lt;globalmetadatacache&gt;ON&lt;/globalmetadatacache&gt;" token="&lt;globalmetadatacache&gt;OFF&lt;/globalmetadatacache&gt;"/>
     <zip destfile="${install}/${war.name}" encoding="utf8">
-      <zipfileset dir="${basedir}" prefix="">
-        <include name="LICENSE.txt"/>
-        <include name="NOTICE.txt"/>
-      </zipfileset>
+      <zipfileset dir="${webapp}/public" prefix=""/>
       <zipfileset dir="${webcontent}" prefix="">
         <include name="*.*"/>
+        <exclude name="app*.jnlp"/>
+        <exclude name="index*.html"/>
         <exclude name="*.jar"/>
       </zipfileset>
-      <zipfileset dir="${libs}" prefix="">
-        <include name="*.jar"/>
-      </zipfileset>
-      <zipfileset dir="${libs}/client" prefix="">
-        <include name="*.jar"/>
-      </zipfileset>
       <zipfileset dir="${install}" prefix="">
-        <include name="${jar.name.client}"/>
         <include name="${jar.name.client.all}"/>
-        <include name="${jar.name.client.signed}"/>
         <include name="${jar.name.client.all.signed}"/>
       </zipfileset>
       <zipfileset dir="${webcontent}/help" prefix="help/">
@@ -349,7 +381,6 @@
       <zipfileset dir="${basedir}/reports" prefix="WEB-INF/rad/apps/${app.name}/reports/" erroronmissingdir="false">
         <include name="**"/>
         <exclude name="**/.*/**"/>
-        <exclude name="*.*"/>
       </zipfileset>
       <zipfileset dir="${webcontent}/WEB-INF" prefix="WEB-INF/">
         <exclude name="**/.*"/>
@@ -374,10 +405,9 @@
       <zipfileset dir="${libs}/server" prefix="WEB-INF/lib">
         <include name="*.jar"/>
         <exclude name="servlet.jar"/>
-        <exclude name="db2*.jar" />
-        <exclude name="postgresql-*.jar" />
-        <exclude name="sqljdbc4.jar" />
-        <exclude name="vaadin-client-compiler-deps*.jar" />
+      </zipfileset>
+      <zipfileset dir="${libs}/server/ext" prefix="WEB-INF/lib" erroronmissingdir="false">
+        <include name="*.jar"/>
       </zipfileset>
       <zipfileset dir="${libs}/client" prefix="WEB-INF/lib">
         <include name="*.jar"/>
@@ -386,6 +416,9 @@
         <exclude name="projx.jar"/>
         <exclude name="jvxmobile-api.jar"/>
         <exclude name="projxvaadin-api.jar"/>
+      </zipfileset>
+      <zipfileset dir="${libs}/client/ext" prefix="WEB-INF/lib" erroronmissingdir="false">
+        <include name="*.jar"/>
       </zipfileset>
       <zipfileset dir="${install}" prefix="WEB-INF/lib">
         <include name="${jar.name.client}"/>
@@ -402,23 +435,22 @@
   </target>
   
   <target name="webcontent" depends="jarall">
+    <delete>
+      <fileset dir="${webcontent}">
+        <include name="*.jar"/>
+      </fileset>
+    </delete>
     <copy todir="${webcontent}">
-      <fileset dir="${libs}">
-        <include name="*.jar"/>
-      </fileset>
-      <fileset dir="${libs}/client">
-        <include name="*.jar"/>
-      </fileset>
       <fileset dir="${install}">
-        <include name="${jar.name.client}"/>
         <include name="${jar.name.client.all}"/>
-        <include name="${jar.name.client.signed}"/>
+        <include name="${jar.name.client.all.signed}"/>
       </fileset>
     </copy>
     <tstamp>
       <format property="touch.time" pattern="MMddyyyyHHmmss"/>
     </tstamp>
     <replaceregexp file="${webcontent}/index.html" match="&apos;applet.jnlp\?install=.*&apos;" replace="&apos;applet.jnlp\?install=${touch.time}&apos;" byline="true"/>
+    <replaceregexp file="${webcontent}/index_signed.html" match="&apos;applet_signed.jnlp\?install=.*&apos;" replace="&apos;applet_signed.jnlp\?install=${touch.time}&apos;" byline="true"/>
   </target>
   
   <!-- * quality tasks -->
@@ -588,7 +620,7 @@
   *****************************************************************
   -->
   
-  <target name="start.complete" depends="clean.start, war, javadoc, clean.stop"  description="Creates web application archive and all relevant libraries"/>
+  <target name="start.complete" depends="clean.start, war, javadoc, clean.stop" description="Creates web application archive and all relevant libraries"/>
   
   <target name="start.deploy" depends="start.complete, tomcat" description="Deploys the application to the configured remote Tomcat"/>
   
