@@ -10,8 +10,6 @@
   <classpathentry kind="lib" path="libs/server/activation.jar"/>
   <classpathentry kind="lib" path="libs/server/appserver.jar"/>
   <classpathentry kind="lib" path="libs/server/commons-fileupload-1.2.2.jar"/>
-  <classpathentry kind="lib" path="libs/server/db2jcc.jar"/>
-  <classpathentry kind="lib" path="libs/server/db2jcc_license_cu.jar"/>
   <classpathentry kind="lib" path="libs/server/dom4j-1.6.1.jar"/>
   <classpathentry kind="lib" path="libs/server/fontbox-1.8.1.jar"/>
   <classpathentry kind="lib" path="libs/server/google-collections-0.9.jar"/>
@@ -40,9 +38,7 @@
   <classpathentry kind="lib" path="libs/server/poi-3.9-20121203.jar"/>
   <classpathentry kind="lib" path="libs/server/poi-ooxml-3.9-20121203.jar"/>
   <classpathentry kind="lib" path="libs/server/poi-ooxml-schemas-3.9-20121203.jar"/>
-  <classpathentry kind="lib" path="libs/server/postgresql-9.0-801.jdbc3.jar"/>
   <classpathentry kind="lib" path="libs/server/projxvaadin-server.jar"/>
-  <classpathentry kind="lib" path="libs/server/sqljdbc4.jar"/>
   <classpathentry kind="lib" path="libs/server/stax-api-1.0.1.jar"/>
   <classpathentry kind="lib" path="libs/server/xmlbeans-2.3.0.jar"/>
   <classpathentry kind="lib" path="libs/server/zxing.jar"/>
