@@ -26,7 +26,7 @@
   
   <property name="app.name" value="DemoERP"/>
   
-  <property name="app.version" value="1.0"/>
+  <property name="app.version" value="1.1"/>
   
   <property name="app.sign" value="false"/>
   

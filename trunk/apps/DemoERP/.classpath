@@ -31,6 +31,16 @@
       <attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
     </attributes>
   </classpathentry>
+  <classpathentry kind="lib" path="libs/server/db2jcc.jar">
+    <attributes>
+      <attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
+    </attributes>
+  </classpathentry>
+  <classpathentry kind="lib" path="libs/server/db2jcc_license_cu.jar">
+    <attributes>
+      <attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
+    </attributes>
+  </classpathentry>
   <classpathentry kind="lib" path="libs/server/dom4j-1.6.1.jar">
     <attributes>
       <attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
@@ -171,7 +181,17 @@
       <attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
     </attributes>
   </classpathentry>
+  <classpathentry kind="lib" path="libs/server/postgresql-9.0-801.jdbc3.jar">
+    <attributes>
+      <attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
+    </attributes>
+  </classpathentry>
   <classpathentry kind="lib" path="libs/server/projxvaadin-server.jar">
+    <attributes>
+      <attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
+    </attributes>
+  </classpathentry>
+  <classpathentry kind="lib" path="libs/server/sqljdbc4.jar">
     <attributes>
       <attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
     </attributes>
