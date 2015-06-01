@@ -3,7 +3,7 @@
 <jnlp spec="1.0+" codebase="http://localhost/Demoerp/">
   <information>
     <title>DemoERP</title>
-    <vendor>VisionX</vendor>
+    <vendor>SIB Visions GmbH</vendor>
     <description>DemoERP</description>
     <description kind="short">DemoERP (1.0)</description>
   </information>

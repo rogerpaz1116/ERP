@@ -5151,10 +5151,10 @@ CREATE TABLE users (
   UNIQUE KEY USER_UK (username)
 );
 
-INSERT INTO users VALUES (1,'admin','d033e22ae348aeb5660fc2140aec35850c4da997','N','Y',NULL,NULL,'admin','2013-05-23 10:25:51','admin','2013-10-07 14:43:46',NULL,NULL,NULL,NULL,NULL,NULL,'N');
-INSERT INTO users VALUES (2,'management','982d46d22d9597c30d79d368dc9197f5f1fe5956','N','Y',NULL,NULL,'admin','2013-08-26 17:54:02','admin','2013-10-07 13:34:42','Max','Manager','management@sibvisions.com',NULL,NULL,NULL,'N');
-INSERT INTO users VALUES (3,'sales','sales','N','Y',NULL,NULL,'VisionX: admin','2013-08-27 08:41:55','VisionX: admin','2013-10-14 11:13:23','Max','Salesman','sales@sibvisions.com',NULL,NULL,NULL,'N');
-INSERT INTO users VALUES (4,'mobil','9feb8a8d922dd8462f4d39d9a85c6ae9d0ab5a67','N','Y',NULL,NULL,'VisionX: admin','2013-08-29 13:56:07','admin','2013-10-07 13:34:40',NULL,NULL,NULL,NULL,NULL,NULL,'N');
+INSERT INTO users VALUES (1,'admin','admin','N','Y',NULL,NULL,'admin','2013-05-23 10:25:51','admin','2013-10-07 14:43:46',NULL,NULL,NULL,NULL,NULL,NULL,'N');
+INSERT INTO users VALUES (2,'manager','manager','N','Y',NULL,NULL,'admin','2013-08-26 17:54:02','admin','2013-10-07 13:34:42','Max','Manager','noreply@sibvisions.com',NULL,NULL,NULL,'N');
+INSERT INTO users VALUES (3,'sales','sales','N','Y',NULL,NULL,'admin','2013-08-27 08:41:55','admin','2013-10-14 11:13:23','Max','Salesman','noreply@sibvisions.com',NULL,NULL,NULL,'N');
+INSERT INTO users VALUES (4,'mobile','mobile','N','Y',NULL,NULL,'admin','2013-08-29 13:56:07','admin','2013-10-07 13:34:40',NULL,NULL,NULL,NULL,NULL,NULL,'N');
 
 CREATE TABLE offer (
   id int(11) NOT NULL AUTO_INCREMENT,
@@ -5420,8 +5420,8 @@ CREATE TABLE user_role (
 );
 
 INSERT INTO user_role VALUES (1,1,1,'admin','2013-05-23 10:25:51','admin','2013-05-23 10:25:51');
-INSERT INTO user_role VALUES (3,3,3,'VisionX: admin','2013-08-27 08:41:55','VisionX: admin','2013-08-27 08:41:55');
-INSERT INTO user_role VALUES (4,4,4,'VisionX: admin','2013-08-29 13:56:07','VisionX: admin','2013-08-29 13:56:07');
+INSERT INTO user_role VALUES (3,3,3,'admin','2013-08-27 08:41:55','admin','2013-08-27 08:41:55');
+INSERT INTO user_role VALUES (4,4,4,'admin','2013-08-29 13:56:07','admin','2013-08-29 13:56:07');
 INSERT INTO user_role VALUES (11,2,2,'admin','2013-10-07 13:34:56','admin','2013-10-07 13:34:56');
 INSERT INTO user_role VALUES (12,1,2,'admin','2013-10-07 13:34:59','admin','2013-10-07 13:34:59');
 INSERT INTO user_role VALUES (13,1,3,'admin','2013-10-07 13:35:00','admin','2013-10-07 13:35:00');
