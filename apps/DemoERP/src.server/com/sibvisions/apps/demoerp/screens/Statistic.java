@@ -65,7 +65,7 @@ public class Statistic extends Session
 			dbsV_statistic_order_offer_year = new DBStorage();
 			dbsV_statistic_order_offer_year.setWritebackTable("v_statistic_order_offer_year");
 			dbsV_statistic_order_offer_year.setDBAccess(getDBAccess());
-			dbsV_statistic_order_offer_year.setDefaultSort(new SortDefinition(false, "YEAR_"));
+			dbsV_statistic_order_offer_year.setDefaultSort(new SortDefinition(true, "YEAR_"));
 			dbsV_statistic_order_offer_year.open();
 
 			put("v_statistic_order_offer_year", dbsV_statistic_order_offer_year);
