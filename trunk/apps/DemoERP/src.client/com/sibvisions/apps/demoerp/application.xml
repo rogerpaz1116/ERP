@@ -35,7 +35,7 @@
   <Application.title>Enterprise Resource Planning</Application.title>
   <Application.About.text>Demo ERP\n\nSIB Visions GmbH\nWehlistra&#223;e 29 / Stair 1 / 2nd Floor\nA-1200 Vienna</Application.About.text>
   <Application.WelcomeScreen/>
-  <Application.version>1.1</Application.version>
+  <Application.version>1.2</Application.version>
   <Application.language>en</Application.language>
   <Company.name>SIB Visions GmbH</Company.name>
   <Company.url>http://www.sibvisions.com/jvx</Company.url>

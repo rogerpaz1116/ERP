@@ -15,6 +15,8 @@
  */
 package com.sibvisions.apps.demoerp.screens;
 
+import javax.rad.model.SortDefinition;
+
 import com.sibvisions.apps.demoerp.Session;
 import com.sibvisions.rad.persist.jdbc.DBStorage;
 
@@ -41,6 +43,7 @@ public class Statistic extends Session
 			dbsV_statistic_order_offer_month = new DBStorage();
 			dbsV_statistic_order_offer_month.setWritebackTable("v_statistic_order_offer_month");
 			dbsV_statistic_order_offer_month.setDBAccess(getDBAccess());
+			dbsV_statistic_order_offer_month.setDefaultSort(new SortDefinition("MONTH"));
 			dbsV_statistic_order_offer_month.open();
 
 			put("v_statistic_order_offer_month", dbsV_statistic_order_offer_month);
@@ -62,6 +65,7 @@ public class Statistic extends Session
 			dbsV_statistic_order_offer_year = new DBStorage();
 			dbsV_statistic_order_offer_year.setWritebackTable("v_statistic_order_offer_year");
 			dbsV_statistic_order_offer_year.setDBAccess(getDBAccess());
+			dbsV_statistic_order_offer_year.setDefaultSort(new SortDefinition(false, "YEAR_"));
 			dbsV_statistic_order_offer_year.open();
 
 			put("v_statistic_order_offer_year", dbsV_statistic_order_offer_year);

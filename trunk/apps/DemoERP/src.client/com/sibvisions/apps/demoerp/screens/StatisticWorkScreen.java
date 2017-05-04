@@ -20,6 +20,7 @@ import javax.rad.application.IWorkScreenApplication;
 import javax.rad.genui.UIColor;
 import javax.rad.genui.UIDimension;
 import javax.rad.genui.UIFont;
+import javax.rad.genui.UIInsets;
 import javax.rad.genui.component.UILabel;
 import javax.rad.genui.component.UIRadioButton;
 import javax.rad.genui.container.UIPanel;
@@ -38,7 +39,6 @@ import com.sibvisions.apps.components.NavigationTable;
 import com.sibvisions.apps.projx.screens.DataSourceWorkScreen;
 import com.sibvisions.apps.vaadin.web.IExpandableView;
 import com.sibvisions.rad.model.remote.RemoteDataBook;
-import javax.rad.genui.UIInsets;
 
 /**
  * Shows a statistic with different chart types.
@@ -278,11 +278,13 @@ public class StatisticWorkScreen extends DataSourceWorkScreen implements IExpand
 		navigationTableYear.setMaximumSize(new UIDimension(450, 350));
 		navigationTableYear.setDataBook(rdbV_statistic_order_offer_year);
 		navigationTableYear.setToolBarVisible(false);
+		navigationTableYear.setSortOnHeaderEnabled(false);
 
 		navigationTableMonth.setMaximumSize(new UIDimension(450, 350));
 		navigationTableMonth.setDataBook(rdbV_statistic_order_offer_month);
 		navigationTableMonth.setAutoResize(false);
 		navigationTableMonth.setToolBarVisible(false);
+        navigationTableMonth.setSortOnHeaderEnabled(false);
 
 		panelSelectedYear.setMinimumSize(new UIDimension(20, 20));
 		panelSelectedYear.setLayout(formLayoutSelectedYear);

@@ -78,7 +78,7 @@ public class Session extends Application
 		if (wsac == null)
 		{
 			DBWorkScreenAccess dbwsac = new DBWorkScreenAccess();
-			dbwsac.setDBDataSource(getDBAccess());
+			dbwsac.setDBAccess(getDBAccess());
 
 			wsac = dbwsac;
 

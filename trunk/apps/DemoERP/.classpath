@@ -16,11 +16,6 @@
   </classpathentry>
   <classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
   <classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
-  <classpathentry kind="lib" path="libs/server/activation.jar">
-    <attributes>
-      <attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
-    </attributes>
-  </classpathentry>
   <classpathentry kind="lib" path="libs/server/appserver.jar">
     <attributes>
       <attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
@@ -42,21 +37,6 @@
     </attributes>
   </classpathentry>
   <classpathentry kind="lib" path="libs/server/dom4j-1.6.1.jar">
-    <attributes>
-      <attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
-    </attributes>
-  </classpathentry>
-  <classpathentry kind="lib" path="libs/server/fontbox-1.8.1.jar">
-    <attributes>
-      <attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
-    </attributes>
-  </classpathentry>
-  <classpathentry kind="lib" path="libs/server/google-collections-0.9.jar">
-    <attributes>
-      <attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
-    </attributes>
-  </classpathentry>
-  <classpathentry kind="lib" path="libs/server/gson-2.2.jar">
     <attributes>
       <attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
     </attributes>
@@ -121,26 +101,6 @@
       <attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
     </attributes>
   </classpathentry>
-  <classpathentry kind="lib" path="libs/server/lucene-analyzers-common-4.2.1.jar">
-    <attributes>
-      <attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
-    </attributes>
-  </classpathentry>
-  <classpathentry kind="lib" path="libs/server/lucene-core-4.2.1.jar">
-    <attributes>
-      <attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
-    </attributes>
-  </classpathentry>
-  <classpathentry kind="lib" path="libs/server/lucene-queryparser-4.2.1.jar">
-    <attributes>
-      <attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
-    </attributes>
-  </classpathentry>
-  <classpathentry kind="lib" path="libs/server/mail.jar">
-    <attributes>
-      <attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
-    </attributes>
-  </classpathentry>
   <classpathentry kind="lib" path="libs/server/org.restlet.ext.fileupload.jar">
     <attributes>
       <attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
@@ -157,11 +117,6 @@
     </attributes>
   </classpathentry>
   <classpathentry kind="lib" path="libs/server/org.restlet.jar">
-    <attributes>
-      <attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
-    </attributes>
-  </classpathentry>
-  <classpathentry kind="lib" path="libs/server/pdfbox-1.8.1.jar">
     <attributes>
       <attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
     </attributes>
@@ -258,11 +213,6 @@
       <attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
     </attributes>
   </classpathentry>
-  <classpathentry kind="lib" path="libs/server/atmosphere-runtime-2.2.4.vaadin5.jar">
-    <attributes>
-      <attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
-    </attributes>
-  </classpathentry>
   <classpathentry kind="lib" path="libs/server/commons-logging-1.1.3.jar">
     <attributes>
       <attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
@@ -273,63 +223,88 @@
       <attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
     </attributes>
   </classpathentry>
-  <classpathentry kind="lib" path="libs/server/cssparser-0.9.11.jar">
-    <attributes>
-      <attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
-    </attributes>
-  </classpathentry>
   <classpathentry kind="lib" path="libs/server/flute-1.3.0.gg2.jar">
     <attributes>
       <attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
     </attributes>
   </classpathentry>
-  <classpathentry kind="lib" path="libs/server/guava-16.0.1.vaadin1.jar">
-    <attributes>
-      <attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
-    </attributes>
-  </classpathentry>
-  <classpathentry kind="lib" path="libs/server/jsoup-1.8.1.jar">
-    <attributes>
-      <attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
-    </attributes>
-  </classpathentry>
-  <classpathentry kind="lib" path="libs/server/streamhtmlparser-jsilver-0.0.10.vaadin1.jar">
-    <attributes>
-      <attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
-    </attributes>
-  </classpathentry>
-  <classpathentry kind="lib" path="libs/server/vaadin-charts-2.0.0.jar">
-    <attributes>
-      <attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
-    </attributes>
-  </classpathentry>
-  <classpathentry kind="lib" path="libs/server/vaadin-sass-compiler-0.9.12.jar">
-    <attributes>
-      <attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
-    </attributes>
-  </classpathentry>
   <classpathentry kind="output" path="build/classes"/>
-  <classpathentry kind="lib" path="libs/server/vaadin-client-compiled-7.4.5.jar">
+  <classpathentry kind="lib" path="libs/server/javax.mail-1.5.4.jar">
     <attributes>
       <attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
     </attributes>
   </classpathentry>
-  <classpathentry kind="lib" path="libs/server/vaadin-push-7.4.5.jar">
+  <classpathentry kind="lib" path="libs/server/atmosphere-runtime-2.2.9.vaadin2.jar">
     <attributes>
       <attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
     </attributes>
   </classpathentry>
-  <classpathentry kind="lib" path="libs/server/vaadin-server-7.4.5.jar">
+  <classpathentry kind="lib" path="libs/server/fontbox-2.0.2.jar">
     <attributes>
       <attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
     </attributes>
   </classpathentry>
-  <classpathentry kind="lib" path="libs/server/vaadin-shared-7.4.5.jar">
+  <classpathentry kind="lib" path="libs/server/jsoup-1.8.3.jar">
     <attributes>
       <attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
     </attributes>
   </classpathentry>
-  <classpathentry kind="lib" path="libs/server/vaadin-themes-7.4.5.jar">
+  <classpathentry kind="lib" path="libs/server/lucene-analyzers-common-4.7.2.jar">
+    <attributes>
+      <attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
+    </attributes>
+  </classpathentry>
+  <classpathentry kind="lib" path="libs/server/lucene-core-4.7.2.jar">
+    <attributes>
+      <attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
+    </attributes>
+  </classpathentry>
+  <classpathentry kind="lib" path="libs/server/lucene-queryparser-4.7.2.jar">
+    <attributes>
+      <attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
+    </attributes>
+  </classpathentry>
+  <classpathentry kind="lib" path="libs/server/pdfbox-2.0.2.jar">
+    <attributes>
+      <attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
+    </attributes>
+  </classpathentry>
+  <classpathentry kind="lib" path="libs/server/vaadin-sass-compiler-0.9.13.jar">
+    <attributes>
+      <attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
+    </attributes>
+  </classpathentry>
+  <classpathentry kind="lib" path="libs/server/vaadin-charts-3.2.0.jar">
+    <attributes>
+      <attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
+    </attributes>
+  </classpathentry>
+  <classpathentry kind="lib" path="libs/server/vaadin-charts-model-3.2.0.jar">
+    <attributes>
+      <attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
+    </attributes>
+  </classpathentry>
+  <classpathentry kind="lib" path="libs/server/vaadin-client-compiled-7.7.7.jar">
+    <attributes>
+      <attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
+    </attributes>
+  </classpathentry>
+  <classpathentry kind="lib" path="libs/server/vaadin-push-7.7.7.jar">
+    <attributes>
+      <attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
+    </attributes>
+  </classpathentry>
+  <classpathentry kind="lib" path="libs/server/vaadin-server-7.7.7.jar">
+    <attributes>
+      <attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
+    </attributes>
+  </classpathentry>
+  <classpathentry kind="lib" path="libs/server/vaadin-shared-7.7.7.jar">
+    <attributes>
+      <attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
+    </attributes>
+  </classpathentry>
+  <classpathentry kind="lib" path="libs/server/vaadin-themes-7.7.7.jar">
     <attributes>
       <attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
     </attributes>
