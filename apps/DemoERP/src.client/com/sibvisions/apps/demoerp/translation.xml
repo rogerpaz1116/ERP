@@ -1,11 +1,13 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
 <properties>
+<entry key="PostgreSQL-23505: *&quot;*&quot;*">Uniqueness violation (*1)! Duplicate key can not be inserted.</entry>
 <entry key="PostgreSQL-23503: *&quot;*&quot;*&quot;*&quot;*&quot;*&quot;*(*)=(*)*&quot;*&quot;*">Delete not possible!  One or more rows still exists in a detail table *1.*5 (*3).</entry>
 <entry key="User '*' is expired for application '*'">User '*0' is no longer valid!</entry>
 <entry key="Unknown method '*'">Method '*' was not found!</entry>
 <entry key="*&quot;*.*.*&quot;*SQLCODE=-532*">Delete not possible!  One or more rows still exists in a detail table *1.*2 (*3).</entry>
 <entry key="MSSQL-2627: *'*'*'*.*'*">Uniqueness violation (*2)! Duplicate key can not be inserted into table *3.*4 .</entry>
+<entry key="PostgreSQL-23505: *»*«*">Uniqueness violation (*1)! Duplicate key can not be inserted.</entry>
 <entry key="PostgreSQL-23505: *&quot;*&quot;">Uniqueness violation (*1)! Duplicate key can not be inserted.</entry>
 <entry key="ORA-02292: *(*.*)*">Delete not possible! One or more rows still exists in a detail table (*2).</entry>
 <entry key="Error opening work-screen '">The screen '*' was not found!</entry>
@@ -30,6 +32,7 @@
 <entry key="ORA-01722: *">Only numbers are allowed!</entry>
 <entry key="Call back is not allowed!">Callback denied!</entry>
 <entry key="MSSQL-547: *'*'*'*'*'*.*'*'*'*">Delete not possible!  One or more rows still exists in a detail table *5.*6 (*1).</entry>
+<entry key="ORA-01013: *">The operation lasts too long, maybe the record is being edited by another user!</entry>
 <entry key="MySQL-1451: *(`*`.`*`*`*`*(`*`)*`*`*(`*`))">Delete not possible!  One or more rows still exists in a detail table *1.*2 (*4).</entry>
 <entry key="ORA-2*: *ORA-*">*1</entry>
 <entry key="Read timed out">Connection to the server is broken!</entry>
